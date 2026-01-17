@@ -12,6 +12,7 @@ import Combine
 @main
 struct My_SupplementApp: App {
     @StateObject private var appState = AppState()
+    
     @StateObject private var supplementStore = SupplementStore()
 
     
