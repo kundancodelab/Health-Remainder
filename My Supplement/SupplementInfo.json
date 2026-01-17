@@ -1,0 +1,718 @@
+[
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f001",
+        "favorite": false,
+        "name": "Folic Acid",
+        "description": "Folic acid (Vitamin B9) is essential for DNA synthesis, cell division, and red blood cell formation. It is particularly important during pregnancy and supports brain and cardiovascular health.",
+        "benefits": [
+            "Supports the formation of red blood cells and prevents anemia",
+            "Crucial during pregnancy to prevent neural tube defects",
+            "Aids in DNA and RNA synthesis and cell growth",
+            "Helps regulate homocysteine levels and supports heart health",
+            "May support mood and cognitive function"
+        ],
+        "specialNotes": "Folic acid is the synthetic form, more stable than natural folate. Best absorbed with B12. Excess can mask B12 deficiency symptoms.",
+        "synergies": [
+            "Vitamin B12 – together support red blood cells and DNA synthesis",
+            "Iron – folate enhances iron’s role in red blood cell formation",
+            "Choline – supports brain development alongside folate"
+        ],
+        "incompatibleWith": [
+            "Alcohol – interferes with absorption and metabolism",
+            "Certain medications like methotrexate"
+        ],
+        "sideEffects": [
+            "Usually well tolerated",
+            "High doses may mask signs of B12 deficiency"
+        ],
+        "foodSources": [
+            "Leafy greens (spinach, kale, romaine lettuce)",
+            "Asparagus, broccoli, Brussels sprouts",
+            "Beans, lentils, peas",
+            "Avocados and oranges",
+            "Fortified grains and cereals"
+        ],
+        "foodImages": [
+            ["fol1", "Spinat"],
+            ["fol2", "Kale"],
+            ["fol3", "Lentils"],
+            ["fol4", "Asparagus"],
+            ["fol5", "Broccoli"],
+            ["fol6", "Brussels sprouts"],
+            ["fol7", "Beans"],
+            ["fol8", "Peas"],
+            ["fol9", "Avocados"],
+            ["fol10", "Oranges"],
+            ["fol11", "Fortified grains"],
+            ["fol12", "Fortified cereals"],
+            ["fol13", "Romaine lettuce"]
+        ]
+    },
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0012",
+        "favorite": false,
+        "name": "Vitamin C",
+        "description": "Vitamin C (ascorbic acid) is a powerful water-soluble antioxidant that supports immune function, collagen synthesis, iron absorption, and protection against oxidative stress.",
+        "benefits": [
+            "Enhances immune response and may shorten the duration of colds",
+            "Supports collagen formation for healthy skin, joints, and blood vessels",
+            "Acts as a potent antioxidant protecting cells from oxidative damage",
+            "Improves absorption of non-heme iron from plant-based foods",
+            "Aids in wound healing and connective tissue maintenance"
+        ],
+        "specialNotes": "Vitamin C is not stored in the body, so regular intake is necessary. High doses may cause digestive upset but are usually well-tolerated in divided doses.",
+        "synergies": [
+            "Iron – improves non-heme iron absorption",
+            "Zinc – combined immune-supportive effects",
+            "Collagen – enhances skin and joint benefits"
+        ],
+        "incompatibleWith": [
+            "High alcohol intake – depletes vitamin C levels",
+            "NSAIDs or aspirin – may increase vitamin C excretion"
+        ],
+        "sideEffects": [
+            "High doses (>2000 mg/day) may cause diarrhea or bloating",
+            "May increase risk of kidney stones in sensitive individuals"
+        ],
+        "foodSources": [
+            "Citrus fruits (oranges, lemons, grapefruits)",
+            "Bell peppers (red and yellow)",
+            "Kiwi, strawberries, guava",
+            "Broccoli, Brussels sprouts, kale",
+            "Tomatoes and tomato juice",
+            "Parsley and acerola cherry"
+        ],
+        "foodImages": [
+            ["vitc_1", "Oranges"],
+            ["vitc_2", "Lemons"],
+            ["vitc_3", "Grapefruits"],
+            ["vitc_4", "Bell peppers"],
+            ["vitc_5", "Guava"],
+            ["vitc_6", "Broccoli"],
+            ["vitc_7", "Brussels sprouts"],
+            ["vitc_8", "Kale"],
+            ["vitc_9", "Kiwi"],
+            ["vitc_10", "Strawberries"],
+            ["vitc_11", "Tomatoes"],
+            ["vitc_12", "Tomato juice"],
+            ["vitc_13", "Parsley"],
+            ["vitc_14", "Acerola cherry"]
+        ]
+    },
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0013",
+        "favorite": false,
+        "name": "Vitamin D",
+        "description": "Vitamin D is a fat-soluble vitamin essential for calcium absorption, bone health, immune function, and hormonal balance. It is synthesized in the skin through sun exposure and found in limited food sources.",
+        "benefits": [
+            "Supports calcium and phosphorus absorption for strong bones and teeth",
+            "Enhances immune system response and reduces susceptibility to infections",
+            "Plays a role in mood regulation and may reduce symptoms of depression",
+            "Contributes to muscle strength and balance in the elderly",
+            "May help reduce inflammation and support heart health"
+        ],
+        "specialNotes": "Many people are deficient due to lack of sun exposure. Best taken with a fat-containing meal to enhance absorption.",
+        "synergies": [
+            "Magnesium – necessary to activate vitamin D in the body",
+            "Vitamin K2 – helps direct calcium to the bones",
+            "Calcium – works together for bone mineralization"
+        ],
+        "incompatibleWith": [
+            "High doses of vitamin A – may interfere with vitamin D metabolism",
+            "Soft drinks (high phosphorus) – may reduce bone benefits"
+        ],
+        "sideEffects": [
+            "Toxicity can occur at extremely high doses, causing nausea, weakness, and kidney issues",
+            "May cause elevated calcium levels if overused"
+        ],
+        "foodSources": [
+            "Fatty fish (salmon, mackerel, sardines)",
+            "Cod liver oil",
+            "Egg yolks",
+            "Fortified dairy and plant-based milk",
+            "Mushrooms exposed to sunlight"
+        ],
+        "foodImages": [
+            ["vitd_1", "Egg yolks"],
+            ["vitd_2", "Sardines"],
+            
+            ["vitd_3", "Cod Liver Oil"],
+            ["vitd_4", "Fortified dairy"],
+            ["vitd_5", "Mackerel"],
+            ["vitd_7", "Plant-based milk"],
+            ["vitd_6", "Mushrooms"],
+            ["vitd_8", "Salmon"]
+            
+        ]
+    },
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0014",
+        "favorite": false,
+        "name": "Magnesium",
+        "description": "Magnesium is an essential mineral involved in over 300 biochemical reactions, including muscle and nerve function, blood glucose regulation, energy production, and bone health.",
+        "benefits": [
+            "Supports muscle relaxation and helps reduce cramps and spasms",
+            "Calms the nervous system and supports stress resilience",
+            "Assists in energy metabolism and reduces fatigue",
+            "Contributes to strong bones and cardiovascular health",
+            "Regulates blood sugar levels and supports sleep quality"
+        ],
+        "specialNotes": "Magnesium needs increase with physical or mental stress. Some forms (e.g., citrate) may cause loose stools.",
+        "synergies": [
+            "Vitamin D – activates enzymes that depend on magnesium",
+            "Calcium – works together for muscle and bone function",
+            "Vitamin B6 – enhances magnesium uptake into cells"
+        ],
+        "incompatibleWith": [
+            "Excess calcium or zinc – may compete for absorption",
+            "Antacids or proton pump inhibitors – may reduce absorption"
+        ],
+        "sideEffects": [
+            "High doses can cause diarrhea (especially citrate form)",
+            "Deficiency symptoms include cramps, fatigue, and irritability"
+        ],
+        "foodSources": [
+            "Leafy green vegetables (spinach, kale)",
+            "Nuts and seeds (pumpkin seeds, almonds)",
+            "Whole grains (brown rice, oats)",
+            "Legumes (lentils, beans, chickpeas)",
+            "Dark chocolate",
+            "Mineral water rich in magnesium"
+        ],
+        "foodImages": [
+            ["mag1", "Spinach"],
+            ["mag2", "Kale"],
+            ["mag3", "Pumpkin seeds"],
+            ["mag4", "Almonds"],
+            ["mag5", "Brown rice"],
+            ["mag6", "Oats"],
+            ["mag7", "Lentils"],
+            ["mag8", "Beans"],
+            ["mag9", "Chickpeas"],
+            ["mag10", "Dark chocolate"],
+            ["mag11", "Mineral water rich in magnesium       "]
+        ]
+    },
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0015",
+        "favorite": false,
+        "name": "Zinc",
+        "description": "Zinc is a trace mineral vital for immune function, wound healing, hormone regulation, skin health, and cellular repair. It also supports taste and smell and DNA synthesis.",
+        "benefits": [
+            "Boosts immune defenses and supports wound healing",
+            "Promotes healthy skin and may reduce acne and inflammation",
+            "Supports testosterone levels and reproductive health",
+            "Improves sense of taste and smell",
+            "Plays a critical role in cell division and DNA repair"
+        ],
+        "specialNotes": "Zinc is best absorbed on an empty stomach but can cause nausea. Take with a light snack if sensitive.",
+        "synergies": [
+            "Vitamin C – synergistic immune support",
+            "Quercetin – may aid zinc transport into cells",
+            "Magnesium – complements for hormonal balance"
+        ],
+        "incompatibleWith": [
+            "Iron and calcium – interfere with absorption",
+            "Coffee and tea – reduce bioavailability due to phytates"
+        ],
+        "sideEffects": [
+            "High doses may cause nausea or vomiting",
+            "Long-term excess can lead to copper deficiency"
+        ],
+        "foodSources": [
+            "Red meat (beef, lamb)",
+            "Shellfish (oysters, crab, mussels)",
+            "Pumpkin seeds, sunflower seeds",
+            "Legumes (lentils, chickpeas, beans)",
+            "Whole grains and eggs",
+            "Fortified cereals"
+        ],
+        "foodImages": [
+            ["zin1", "Beef"],
+            ["zin2", "Lamb"],
+            ["zin3", "Oysters"],
+            ["zin4", "Crab"],
+            ["zin5", "Mussels"],
+            ["zin6", "Pumpkin seeds"],
+            ["zin7", "Sunflower seeds"],
+            ["zin8", "Lentils"],
+            ["zin9", "Chickpeas"],
+            ["zin10", "Beans"],
+            ["zin11", "Whole grains"],
+            ["zin12", "Fortified cereals"]
+        ]
+    },
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0016",
+        "favorite": false,
+        "name": "Vitamin B12",
+        "description": "Vitamin B12 (cobalamin) is essential for red blood cell formation, nervous system function, and energy production. It is mainly found in animal products and crucial for DNA synthesis.",
+        "benefits": [
+            "Prevents fatigue and supports red blood cell production",
+            "Maintains healthy nerve function and mental clarity",
+            "Supports DNA and RNA synthesis and cell division",
+            "May help improve mood and reduce cognitive decline",
+            "Essential for energy metabolism and methylation processes"
+        ],
+        "specialNotes": "Absorption requires intrinsic factor. Vegan users must supplement. B12 injections may be used in cases of malabsorption.",
+        "synergies": [
+            "Folate – together regulate homocysteine and support red blood cells",
+            "Vitamin B6 – helps convert B12 into active forms",
+            "Iron – supports red blood cell health together"
+        ],
+        "incompatibleWith": [
+            "Alcohol – interferes with absorption",
+            "Metformin or acid blockers – reduce B12 uptake"
+        ],
+        "sideEffects": [
+            "Usually very safe; excess excreted in urine",
+            "High doses may rarely cause acne or mild rash"
+        ],
+        "foodSources": [
+            "Liver (especially beef liver)",
+            "Fish (salmon, tuna, sardines)",
+            "Red meat and poultry",
+            "Eggs and dairy products",
+            "Fortified cereals and plant milks (for vegans)"
+        ],
+        "foodImages": [
+            ["vitb12_1", "Beef liver"],
+            ["vitb12_2", "Salmon"],
+            ["vitb12_3", "Tuna"],
+            ["vitb12_4", "Sardines"],
+            ["vitb12_5", "Red meat"],
+            ["vitb12_6", "Poultry"],
+            ["vitb12_7", "Eggs"],
+            ["vitb12_8", "Dairy products"],
+            ["vitb12_9", "Fortified cereals"],
+            ["vitb12_10", "Fortified plant milks"],
+            
+        ]
+    },
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0017",
+        "favorite": false,
+        "name": "Iron",
+        "description": "Iron is a vital mineral that supports oxygen transport, energy production, and immune function. It is a key component of hemoglobin in red blood cells and myoglobin in muscles.",
+        "benefits": [
+            "Supports oxygen delivery to tissues and muscles",
+            "Prevents and treats iron-deficiency anemia",
+            "Improves energy, stamina, and exercise performance",
+            "Essential for brain development and cognitive function",
+            "Supports immune response and recovery"
+        ],
+        "specialNotes": "Heme iron (animal-based) is more bioavailable than non-heme (plant-based). Vitamin C enhances absorption. Take on an empty stomach if tolerated.",
+        "synergies": [
+            "Vitamin C – significantly improves iron absorption",
+            "Folic Acid – supports red blood cell production",
+            "Copper – helps mobilize iron into red blood cells"
+        ],
+        "incompatibleWith": [
+            "Calcium and dairy – inhibit absorption",
+            "Zinc – competes for absorption if taken together",
+            "Tea/coffee – tannins reduce iron uptake"
+        ],
+        "sideEffects": [
+            "Constipation or gastrointestinal discomfort",
+            "Dark stools (harmless)",
+            "Nausea when taken without food"
+        ],
+        "foodSources": [
+            "Red meat, liver, and poultry",
+            "Shellfish (clams, oysters, mussels)",
+            "Legumes (lentils, chickpeas, beans)",
+            "Spinach and leafy greens",
+            "Fortified cereals and grains",
+            "Tofu"
+        ],
+        "foodImages": [
+            ["iron1", "Red meat"],
+            ["iron2", "Liver"],
+            ["iron3", "Poultry"],
+            ["iron4", "Clams"],
+            ["iron5", "Oysters"],
+            ["iron6", "Mussels"],
+            ["iron7", "Lentils"],
+            ["iron8", "Chickpeas"],
+            ["iron9", "Beans"],
+            ["iron10", "Spinach"],
+            ["iron11", "Fortified cereals"],
+            ["iron12", "Tofu"]
+        ]
+    },
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0018",
+        "favorite": false,
+        "name": "Calcium",
+        "description": "Calcium is the most abundant mineral in the body, essential for strong bones and teeth, muscle function, nerve signaling, and blood clotting.",
+        "benefits": [
+            "Builds and maintains strong bones and teeth",
+            "Supports muscle contractions and heart rhythm",
+            "Regulates nerve signaling and hormone release",
+            "Helps prevent osteoporosis and bone loss",
+            "Supports healthy blood clotting"
+        ],
+        "specialNotes": "Needs magnesium and vitamin D to be absorbed effectively. Split doses for best absorption.",
+        "synergies": [
+            "Vitamin D – increases calcium absorption",
+            "Vitamin K2 – directs calcium to bones",
+            "Magnesium – balances calcium activity in muscles"
+        ],
+        "incompatibleWith": [
+            "Iron and zinc – inhibit each other's absorption",
+            "High sodium intake – increases calcium excretion"
+        ],
+        "sideEffects": [
+            "Constipation at high doses",
+            "May interfere with absorption of other minerals",
+            "Excess may lead to kidney stones"
+        ],
+        "foodSources": [
+            "Dairy products (milk, yogurt, cheese)",
+            "Leafy greens (kale, bok choy, broccoli)",
+            "Fortified plant milks and cereals",
+            "Tofu and tempeh",
+            "Sardines and salmon (with bones)",
+            "Almonds and sesame seeds"
+        ],
+        "foodImages": [
+            ["cal1", "Milk"],
+            ["cal2", "Yogurt"],
+            ["cal3", "Cheese"],
+            ["cal4", "Kale"],
+            ["cal5", "Bok choy"],
+            ["cal6", "Broccoli"],
+            ["cal7", "Fortified plant milks"],
+            ["cal8", "Tofu"],
+            ["cal9", "Cereals"],
+            ["cal10", "tempeh"]
+        ]
+    },
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0019",
+        "favorite": false,
+        "name": "Selenium",
+        "description": "Selenium is a trace mineral with antioxidant properties that supports thyroid function, immune response, and DNA synthesis. It helps neutralize free radicals and inflammation.",
+        "benefits": [
+            "Acts as a powerful antioxidant protecting cells from oxidative stress",
+            "Supports healthy thyroid hormone metabolism",
+            "Boosts immune function and inflammation control",
+            "May improve skin clarity and reduce acne",
+            "Contributes to fertility and DNA repair"
+        ],
+        "specialNotes": "Only 1–2 Brazil nuts can provide the full daily need. Overuse can lead to selenium toxicity.",
+        "synergies": [
+            "Vitamin E – enhances antioxidant capacity",
+            "Iodine – works together for thyroid regulation",
+            "Zinc – complements for immune function"
+        ],
+        "incompatibleWith": [
+            "Heavy metal exposure – may reduce effectiveness",
+            "Over-supplementation – toxicity risk"
+        ],
+        "sideEffects": [
+            "High doses can cause brittle hair/nails and garlic breath odor",
+            "Long-term excess may lead to selenosis"
+        ],
+        "foodSources": [
+            "Brazil nuts (very high concentration)",
+            "Tuna, sardines, salmon",
+            "Turkey and chicken",
+            "Eggs",
+            "Sunflower seeds",
+            "Shiitake mushrooms"
+        ],
+        "foodImages": [
+            ["sel1", "Brazil nuts"],
+            ["sel2", "Tuna"],
+            ["sel3", "Sardines"],
+            ["sel4", "Salmon"],
+            ["sel5", "Turkey"],
+            ["sel6", "Chicken"],
+            ["sel7", "Eggs"],
+            ["sel8", "Sunflower seeds"],
+            ["sel9", "Shiitake mushrooms"],
+            
+        ]
+    },
+    {
+        "id": "supp_folic_8a7d1a5f-12e9-4e4f-bca1-aaa12345f00110",
+        "favorite": false,
+        "name": "Vitamin K2",
+        "description": "Vitamin K2 (menaquinone) is essential for directing calcium into bones and teeth while preventing its accumulation in arteries. It plays a critical role in bone strength and cardiovascular protection.",
+        "benefits": [
+            "Directs calcium into bones and teeth, reducing arterial calcification",
+            "Strengthens bone density and may reduce fracture risk",
+            "Supports heart health and vascular flexibility",
+            "May help balance insulin sensitivity and inflammation",
+            "Enhances dental health and mineralization"
+        ],
+        "specialNotes": "Works best with vitamin D3 and magnesium. Especially important when supplementing with calcium.",
+        "synergies": [
+            "Vitamin D – enhances calcium transport",
+            "Calcium – primary partner in bone building",
+            "Magnesium – supports mineral balance"
+        ],
+        "incompatibleWith": [
+            "Blood thinners (e.g., warfarin) – interacts with clotting factors",
+            "Excess vitamin A – may reduce K2 effectiveness"
+        ],
+        "sideEffects": [
+            "Generally well tolerated",
+            "Excess doses may interfere with medications"
+        ],
+        "foodSources": [
+            "Natto (fermented soybeans)",
+            "Hard cheeses",
+            "Egg yolks",
+            "Chicken liver",
+            "Butter from grass-fed cows",
+            "Fermented dairy (kefir, yogurt)"
+        ],
+        "foodImages": [
+            ["vitk2_1", "Fermented soybeans"],
+            ["vitk2_2", "Hard cheeses"],
+            ["vitk2_3", "Egg yolks"],
+            ["vitk2_4", "Chicken liver"],
+            ["vitk2_5", "Butter from grass-fed cows"],
+            ["vitk2_6", "Kefir"],
+            ["vitk2_7", "Yogurt"],
+            
+        ]
+    },
+    {
+        "id": "supp_triphala_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0020",
+        "favorite": false,
+        "name": "Triphala",
+        "description": "Ayurvedic healing mixture made from three fruits: Amalaki (Emblica officinalis), Bibhitaki (Terminalia bellirica), and Haritaki (Terminalia chebula). One of the most important remedies in Ayurvedic medicine for rejuvenation, regeneration, and detoxification.",
+        "benefits": [
+            "Supports gut health, digestion, and mild detoxification",
+            "Antioxidant and cell-protective properties",
+            "Anti-inflammatory effects throughout the body",
+            "Aids in weight management and metabolism",
+            "Supports immune system function",
+            "May improve dental health and reduce plaque",
+            "Helps regulate blood sugar and cholesterol levels",
+            "Promotes healthy skin and anti-aging effects"
+        ],
+        "specialNotes": "Traditionally taken on an empty stomach or 2 hours after meals. Dosage: 2-5g daily (1 teaspoon powder 1-2× daily). Course application: 10 weeks intake, then 2-3 weeks break. Can be taken with warm water, buttermilk, ghee, or honey.",
+        "synergies": [
+            "Warm water – traditional combination for digestion",
+            "Honey or Ghee – enhances absorption and palatability",
+            "Probiotics – supports gut flora restoration"
+        ],
+        "incompatibleWith": [
+            "Pregnancy and breastfeeding – only with medical advice",
+            "Children – consult doctor first",
+            "Blood sugar medications – may have additive effects",
+            "Large meals or dairy – reduces effectiveness"
+        ],
+        "sideEffects": [
+            "Mild stomach discomfort or soft stools initially (detox effect)",
+            "Possible allergic reactions to fruit components",
+            "Excessive intake may cause diarrhea and electrolyte loss"
+        ],
+        "foodSources": [
+            "Amalaki (Indian gooseberry)",
+            "Bibhitaki (Terminalia bellirica)",
+            "Haritaki (Terminalia chebula)",
+            "Available as powder, capsules, or decoction"
+        ],
+        "foodImages": [
+            ["tri1", "Amalaki"],
+            ["tri2", "Bibhitaki"],
+            ["tri3", "Haritaki"],
+            ["tri4", "Triphala Powder"]
+        ]
+    },
+    {
+        "id": "supp_opc_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0021",
+        "favorite": false,
+        "name": "OPC (Oligomeric Proanthocyanidins)",
+        "description": "Plant polyphenols and potent antioxidants derived primarily from grape seed extract or pine bark extract. OPCs protect cells and connective tissue from oxidative stress.",
+        "benefits": [
+            "Strong antioxidant that reduces oxidative stress",
+            "Supports skin structure (collagen/elastin) and anti-aging effects",
+            "Improves wound healing (topical and systemic)",
+            "Vascular stabilizing effects on blood pressure and endothelial function",
+            "May stimulate hair growth and follicle health",
+            "Anti-inflammatory and immunomodulatory properties",
+            "Supports recovery after injuries or surgeries"
+        ],
+        "specialNotes": "Typical dosage: 200mg OPC per day. Visible results often require 2-4 months. Best absorbed on an empty stomach. Combine with vitamin C for synergistic effects. Quality products should specify actual OPC content.",
+        "synergies": [
+            "Vitamin C (e.g., acerola) – synergistic antioxidant effects",
+            "Vitamin E – enhances antioxidant capacity",
+            "Collagen – supports skin and joint benefits"
+        ],
+        "incompatibleWith": [
+            "Blood thinners (e.g., Warfarin) – may increase anticoagulant effect",
+            "Grape allergy – avoid grape seed products, use pine bark instead",
+            "Very high-fat meals – may reduce absorption"
+        ],
+        "sideEffects": [
+            "Rare side effects at typical doses",
+            "Occasional mild gastrointestinal discomfort",
+            "Consult doctor if taking blood-thinning medications"
+        ],
+        "foodSources": [
+            "Grape seed extract",
+            "Pine bark extract (Pycnogenol)",
+            "Red grapes and grape skin",
+            "Berries (blueberries, cranberries)",
+            "Dark chocolate"
+        ],
+        "foodImages": [
+            ["opc1", "Grape seed extract"],
+            ["opc2", "Pine bark"],
+            ["opc3", "Red grapes"],
+            ["opc4", "Blueberries"],
+            ["opc5", "Dark chocolate"]
+        ]
+    },
+    {
+        "id": "supp_mumijo_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0022",
+        "favorite": false,
+        "name": "Mumijo (Shilajit)",
+        "description": "Natural biogenic resin from high mountains (Himalaya, Altai, Caucasus) that forms over centuries from decomposed plant and microorganism residues. Contains fulvic and humic acids, minerals, amino acids, polyphenols, and trace vitamins. Known as the 'Black Gold of the Mountains'.",
+        "benefits": [
+            "Adaptogenic, anti-inflammatory, and regenerative properties",
+            "Supports tissue healing, cell regeneration, and wound repair",
+            "Strengthens digestive system (gastritis, ulcers, intestinal health)",
+            "Immunomodulatory effects and stress resilience",
+            "Accelerates bone healing and increases strength and endurance",
+            "Neuroprotective and reduces oxidative stress in brain",
+            "Increases testosterone, sperm count, and fertility in men",
+            "Regulates blood lipid levels and improves antioxidant status",
+            "Supports altitude adaptation and oxygen utilization"
+        ],
+        "specialNotes": "Dosage: 200-300mg, 2-3× daily before meals, dissolved in warm water or as capsule. Course intake: 20-30 days use, then 10-day break. Children under 14: half dose. High-quality products should contain ~200mg fulvic acids per daily dose.",
+        "synergies": [
+            "Honey – traditional combination, improves taste and synergy",
+            "B vitamins – neuroprotective effects",
+            "Vitamin C – enhances absorption",
+            "Magnesium and Zinc – adequate mineral support"
+        ],
+        "incompatibleWith": [
+            "Medications – maintain 2-3 hour interval",
+            "Coffee or tannin-rich teas – reduce effectiveness",
+            "Overheating – destroys fulvic compounds",
+            "Low-quality products with heavy metal contamination"
+        ],
+        "sideEffects": [
+            "Rare: mild stomach irritation or nausea at high doses",
+            "Risk of heavy metal contamination with low-quality products",
+            "May reduce medication effectiveness if taken together",
+            "No serious side effects with lab-tested, high-quality products"
+        ],
+        "foodSources": [
+            "Not a food source – natural mineral resin collected from rock crevices",
+            "Available as purified resin, powder, or capsules",
+            "Also used in creams for external application"
+        ],
+        "foodImages": [
+            ["mum1", "Mumijo Resin"],
+            ["mum2", "Shilajit Powder"],
+            ["mum3", "Mountain Source"]
+        ]
+    },
+    {
+        "id": "supp_msm_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0023",
+        "favorite": false,
+        "name": "MSM (Methylsulfonylmethane)",
+        "description": "Organic sulfur compound providing bioavailable sulfur essential for protein synthesis, enzyme function, hormone production, and antioxidant systems like glutathione. Sulfur is vital for numerous biochemical processes.",
+        "benefits": [
+            "Supports joint health and reduces osteoarthritis pain",
+            "Anti-inflammatory and pain-relieving properties",
+            "Reduces allergy symptoms (hay fever, dust mites)",
+            "Promotes healthy skin, hair, and nail growth (collagen and keratin synthesis)",
+            "Supports liver detoxification and improves cell permeability",
+            "Accelerates muscle recovery and reduces exercise-induced damage",
+            "Strengthens immune system through glutathione production",
+            "Improves gut health and nutrient absorption"
+        ],
+        "specialNotes": "Dosage: 3,000-4,000mg per day, divided into 2 servings (morning and midday). Start with 500-1,000mg and increase gradually. Best taken on an empty stomach 30 minutes before meals. Combine with vitamin C for enhanced absorption. Purity should be ≥99.9%.",
+        "synergies": [
+            "Vitamin C (200-500mg) – improves sulfur absorption and antioxidant effects",
+            "Glucosamine and Chondroitin – for joint support",
+            "Collagen – for skin and connective tissue health"
+        ],
+        "incompatibleWith": [
+            "Blood thinners (aspirin, warfarin, heparin) – may enhance effects",
+            "Large meals – reduce absorption",
+            "Excessive alcohol – reduces detoxification capacity"
+        ],
+        "sideEffects": [
+            "Initial detox symptoms: fatigue, headaches, skin rashes",
+            "High doses (>4g) may cause bloating or loose stools",
+            "Reduce dosage and drink plenty of water if symptoms occur",
+            "Pregnancy/breastfeeding: consult doctor (≤3g considered safe)"
+        ],
+        "foodSources": [
+            "Broccoli and cruciferous vegetables",
+            "Brussels sprouts and cabbage",
+            "Garlic and onions",
+            "Asparagus",
+            "Raw milk",
+            "Typically supplemented as synthetic MSM is more concentrated"
+        ],
+        "foodImages": [
+            ["msm1", "Broccoli"],
+            ["msm2", "Brussels sprouts"],
+            ["msm3", "Garlic"],
+            ["msm4", "Onions"],
+            ["msm5", "Asparagus"],
+            ["msm6", "MSM Powder"]
+        ]
+    },
+    {
+        "id": "supp_afa_8a7d1a5f-12e9-4e4f-bca1-aaa12345f0024",
+        "favorite": false,
+        "name": "AFA Algae (Aphanizomenon flos-aquae)",
+        "description": "Wild-growing blue-green freshwater algae from Upper Klamath Lake (Oregon, USA). One of the oldest life forms on Earth and among the most nutrient-dense natural sources available. Contains high concentrations of vitamins, minerals, amino acids, chlorophyll, enzymes, and phytonutrients.",
+        "benefits": [
+            "Complete protein source with all 20 amino acids including 8 essential ones",
+            "High in vitamin B12 (2-3× more than beef liver) for energy and blood formation",
+            "Rich in magnesium, calcium, zinc for muscles, bones, and metabolism",
+            "Omega-3 and Omega-6 fatty acids support brain and vascular health",
+            "3% chlorophyll content supports oxygen transport and cell regeneration",
+            "Enhances detoxification and liver function",
+            "Strengthens immune system through antioxidants",
+            "Promotes mental clarity, concentration, and awareness",
+            "Supports nervous system and neurotransmitter balance",
+            "May improve mood stability and emotional balance"
+        ],
+        "specialNotes": "Dosage: 1-2g daily (powder or tablets) with water or juice, ideally in morning on an empty stomach. For sensitive stomachs, take with meals. Athletes: 2-3g daily. Children (6+ years): half dose. Cure duration: 2-3 months continuous, optional 1-2 week break.",
+        "synergies": [
+            "Vitamin C – enhances nutrient absorption and protects sensitive compounds",
+            "Spirulina or Chlorella – broader nutrient spectrum",
+            "MSM or OPC – supports detoxification and cell regeneration"
+        ],
+        "incompatibleWith": [
+            "Coffee or black tea immediately after – inhibits nutrient absorption",
+            "Highly heated foods – destroy sensitive enzymes",
+            "Phenylketonuria (PKU) – contains phenylalanine",
+            "Consult doctor if taking blood thinners or thyroid medications"
+        ],
+        "sideEffects": [
+            "Initial detox symptoms: fatigue, skin impurities, or headaches",
+            "Reduce dosage and drink plenty of water if detox occurs",
+            "No toxic accumulation known as it's a natural food",
+            "Not suitable for people with phenylketonuria"
+        ],
+        "foodSources": [
+            "Wild-harvested from Upper Klamath Lake, Oregon",
+            "Available as dried powder or tablets",
+            "Harvested in summer and gently dried at low temperatures",
+            "Prefer organic, heavy metal-tested quality"
+        ],
+        "foodImages": [
+            ["afa1", "AFA Algae Powder"],
+            ["afa2", "Upper Klamath Lake"],
+            ["afa3", "Blue-green Algae"],
+            ["afa4", "AFA Tablets"]
+        ]
+    }
+    
+    
+]
