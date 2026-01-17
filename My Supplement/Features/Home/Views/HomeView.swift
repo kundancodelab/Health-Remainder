@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var store = SupplementStore()
+    @EnvironmentObject private var store : SupplementStore
     @State private var selectedDate = Date()
     @State private var showToast = false
     @State private var toastMessage = ""
@@ -40,7 +40,7 @@ struct HomeView: View {
             .padding()
         }
         .background(Color.appBackground)
-        .navigationTitle("Home")
+        .navigationTitle("My Supplement")
         .toast(isShowing: $showToast, message: toastMessage, type: .success)
         .onAppear {
             refreshStats()
@@ -113,7 +113,7 @@ struct HomeView: View {
                 Text("Take Your Supplements")
                     .font(.headline)
                 Spacer()
-                NavigationLink(destination: SupplementListView()) {
+                NavigationLink(value: HomeFlow.supplementList) {
                     Text("See All")
                         .font(.subheadline)
                         .foregroundColor(.appPrimary)
@@ -159,9 +159,11 @@ struct HomeView: View {
             Text("No supplements scheduled")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-            NavigationLink("Add Favorites", destination: SupplementListView())
-                .font(.subheadline)
-                .foregroundColor(.appPrimary)
+            NavigationLink(value: HomeFlow.allSupplements) {
+                Text("Add Favorites")
+                    .font(.subheadline)
+                    .foregroundColor(.appPrimary)
+            }
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 30)

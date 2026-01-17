@@ -12,6 +12,8 @@ import Combine
 @main
 struct My_SupplementApp: App {
     @StateObject private var appState = AppState()
+    @StateObject private var supplementStore = SupplementStore()
+
     
     // SwiftData ModelContainer
     let modelContainer: ModelContainer
@@ -25,7 +27,8 @@ struct My_SupplementApp: App {
                 QuizHistoryRecord.self,
                 RewardTransaction.self,
                 UserRewardsSummary.self,
-                FavoriteSupplement.self
+                FavoriteSupplement.self,
+                AuthUserPersistentDM.self
             ])
             
             let modelConfiguration = ModelConfiguration(
@@ -53,6 +56,8 @@ struct My_SupplementApp: App {
         WindowGroup {
             RootView()
                 .environmentObject(appState)
+                .environment(supplementStore)
+            
                 .modelContainer(modelContainer)
                 .onAppear {
                     // Clear badge on app launch
@@ -65,17 +70,19 @@ struct My_SupplementApp: App {
 }
 
 // MARK: - App State
-@MainActor
 class AppState: ObservableObject {
     @Published var isAuthenticated = false
     @Published var hasCompletedOnboarding = false
     
     init() {
-        // Check AuthManager state
-        isAuthenticated = AuthManager.shared.isAuthenticated
-        hasCompletedOnboarding = UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
+        // Check AuthManager state on main actor
+        Task { @MainActor in
+            self.isAuthenticated = AuthManager.shared.isAuthenticated
+            self.hasCompletedOnboarding = UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
+        }
     }
     
+    @MainActor
     func refreshAuthState() {
         isAuthenticated = AuthManager.shared.isAuthenticated
     }

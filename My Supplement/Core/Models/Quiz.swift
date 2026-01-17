@@ -101,7 +101,7 @@ struct QuizState {
 }
 
 // MARK: - Quiz Result
-struct QuizResult {
+struct QuizResult: Hashable {
     let correct: Int
     let incorrect: Int
     let coinsEarned: Int

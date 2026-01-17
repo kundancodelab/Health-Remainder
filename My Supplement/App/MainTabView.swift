@@ -2,13 +2,20 @@
 //  MainTabView.swift
 //  My Supplement
 //
-//  Main tab navigation with routers for each feature
+//  Main tab navigation with MVVM Router pattern
 //
 
 import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTab: Tab = .home
+    
+    // MARK: - Feature Routers
+    @StateObject private var homeRouter = HomeRouterFlow()
+    @StateObject private var supplementsRouter = SupplementsRouterFlow()
+    @StateObject private var quizRouter = QuizRouterFlow()
+    @StateObject private var rewardsRouter = RewardsRouterFlow()
+    @StateObject private var settingsRouter = SettingsRouterFlow()
     
     enum Tab: Int, CaseIterable {
         case home
@@ -50,52 +57,104 @@ struct MainTabView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            // Home Tab
-            NavigationStack {
-                HomeView()
-            }
-            .tabItem {
-                Label(Tab.home.title, systemImage: Tab.home.icon)
-            }
-            .tag(Tab.home)
+            // Home Tab with Router
+            HomeContainerView()
+                .environmentObject(homeRouter)
+                .tabItem { Label(Tab.home.title, systemImage: Tab.home.icon) }
+                .tag(Tab.home)
             
-            // Supplements Tab
-            NavigationStack {
-                SupplementListView()
-            }
-            .tabItem {
-                Label(Tab.supplements.title, systemImage: Tab.supplements.icon)
-            }
-            .tag(Tab.supplements)
+            // Supplements Tab with Router
+            SupplementsContainerView()
+                .environmentObject(supplementsRouter)
+                .tabItem { Label(Tab.supplements.title, systemImage: Tab.supplements.icon) }
+                .tag(Tab.supplements)
             
-            // Quiz Tab
-            NavigationStack {
-                QuizView()
-            }
-            .tabItem {
-                Label(Tab.quiz.title, systemImage: Tab.quiz.icon)
-            }
-            .tag(Tab.quiz)
+            // Quiz Tab with Router
+            QuizContainerView()
+                .environmentObject(quizRouter)
+                .tabItem { Label(Tab.quiz.title, systemImage: Tab.quiz.icon) }
+                .tag(Tab.quiz)
             
-            // Rewards Tab
-            NavigationStack {
-                RewardsView()
-            }
-            .tabItem {
-                Label(Tab.rewards.title, systemImage: Tab.rewards.icon)
-            }
-            .tag(Tab.rewards)
+            // Rewards Tab with Router
+            RewardsContainerView()
+                .environmentObject(rewardsRouter)
+                .tabItem { Label(Tab.rewards.title, systemImage: Tab.rewards.icon) }
+                .tag(Tab.rewards)
             
-            // Settings Tab
-            NavigationStack {
-                SettingsView()
-            }
-            .tabItem {
-                Label(Tab.settings.title, systemImage: Tab.settings.icon)
-            }
-            .tag(Tab.settings)
+            // Settings Tab with Router
+            SettingsContainerView()
+                .environmentObject(settingsRouter)
+                .tabItem { Label(Tab.settings.title, systemImage: Tab.settings.icon) }
+                .tag(Tab.settings)
         }
         .tint(.orange)
+    }
+}
+
+// MARK: - Container Views with Router Pattern
+
+struct HomeContainerView: View {
+    @EnvironmentObject var router: HomeRouterFlow
+    
+    var body: some View {
+        NavigationStack(path: $router.navPaths) {
+            HomeView()
+                .navigationDestination(for: HomeFlow.self) { destination in
+                    destination.destinationView
+                }
+        }
+    }
+}
+
+struct SupplementsContainerView: View {
+    @EnvironmentObject var router: SupplementsRouterFlow
+    
+    var body: some View {
+        NavigationStack(path: $router.navPaths) {
+            SupplementListView()
+                .navigationDestination(for: SupplementsFlow.self) { destination in
+                    destination.destinationView
+                }
+        }
+    }
+}
+
+struct QuizContainerView: View {
+    @EnvironmentObject var router: QuizRouterFlow
+    
+    var body: some View {
+        NavigationStack(path: $router.navPaths) {
+            QuizView()
+                .navigationDestination(for: QuizFlow.self) { destination in
+                    destination.destinationView
+                }
+        }
+    }
+}
+
+struct RewardsContainerView: View {
+    @EnvironmentObject var router: RewardsRouterFlow
+    
+    var body: some View {
+        NavigationStack(path: $router.navPaths) {
+            RewardsView()
+                .navigationDestination(for: RewardsFlow.self) { destination in
+                    destination.destinationView
+                }
+        }
+    }
+}
+
+struct SettingsContainerView: View {
+    @EnvironmentObject var router: SettingsRouterFlow
+    
+    var body: some View {
+        NavigationStack(path: $router.navPaths) {
+            SettingsView()
+                .navigationDestination(for: SettingsFlow.self) { destination in
+                    destination.destinationView
+                }
+        }
     }
 }
 

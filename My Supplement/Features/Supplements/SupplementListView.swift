@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SupplementListView: View {
-    @State private var store = SupplementStore()
+    @EnvironmentObject private var store : SupplementStore
     @State private var searchText = ""
     @State private var selectedCategory: SupplementCategory? = nil
     
@@ -38,7 +38,7 @@ struct SupplementListView: View {
                 // Supplements List
                 LazyVStack(spacing: 12) {
                     ForEach(filteredSupplements) { supplement in
-                        NavigationLink(value: supplement) {
+                        NavigationLink(value: SupplementsFlow.detail(supplement)) {
                             SupplementRowView(supplement: supplement)
                         }
                         .buttonStyle(.plain)
@@ -50,9 +50,6 @@ struct SupplementListView: View {
         .background(Color.appBackground)
         .navigationTitle("Supplements")
         .searchable(text: $searchText, prompt: "Search supplements...")
-        .navigationDestination(for: Supplement.self) { supplement in
-            SupplementDetailView(supplement: supplement)
-        }
     }
     
     private var categoryFilter: some View {
@@ -81,6 +78,64 @@ struct SupplementListView: View {
         }
     }
 }
+
+// MARK: - Supplements Routes
+enum SupplementsFlow: NavigationDestination, Hashable {
+    case list
+    case detail(Supplement)
+    case category(SupplementCategory)
+    
+    var title: String {
+        switch self {
+        case .list:
+            return "Supplements"
+        case .detail(let supplement):
+            return supplement.name
+        case .category(let category):
+            return category.rawValue
+        }
+    }
+    
+    var destinationView: some View {
+        switch self {
+        case .list:
+            SupplementListView()
+        case .detail(let supplement):
+            SupplementDetailView(supplement: supplement)
+        case .category(_):
+            SupplementListView()
+        }
+    }
+    
+    // Hashable conformance
+    func hash(into hasher: inout Hasher) {
+        switch self {
+        case .list:
+            hasher.combine("list")
+        case .detail(let supplement):
+            hasher.combine("detail")
+            hasher.combine(supplement.id)
+        case .category(let category):
+            hasher.combine("category")
+            hasher.combine(category)
+        }
+    }
+    
+    static func == (lhs: SupplementsFlow, rhs: SupplementsFlow) -> Bool {
+        switch (lhs, rhs) {
+        case (.list, .list):
+            return true
+        case (.detail(let l), .detail(let r)):
+            return l.id == r.id
+        case (.category(let l), .category(let r)):
+            return l == r
+        default:
+            return false
+        }
+    }
+}
+
+typealias SupplementsRouterFlow = Router<SupplementsFlow>
 
 // MARK: - Category Chip
 struct CategoryChip: View {

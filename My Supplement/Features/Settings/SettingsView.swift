@@ -67,9 +67,7 @@ struct SettingsView: View {
                     Text("Spanish").tag("Spanish")
                 }
                 
-                NavigationLink {
-                    LifeStageSettingsView()
-                } label: {
+                NavigationLink(value: SettingsFlow.lifeStage) {
                     HStack {
                         Text("Life Stage")
                         Spacer()
@@ -81,15 +79,11 @@ struct SettingsView: View {
             
             // Data
             Section("Data") {
-                NavigationLink {
-                    SupplementHistoryView()
-                } label: {
+                NavigationLink(value: SettingsFlow.supplementHistory) {
                     Label("History", systemImage: "clock.arrow.circlepath")
                 }
                 
-                NavigationLink {
-                    QuizHistoryView()
-                } label: {
+                NavigationLink(value: SettingsFlow.quizHistory) {
                     Label("Quiz History", systemImage: "list.clipboard")
                 }
                 
@@ -109,15 +103,11 @@ struct SettingsView: View {
                         .foregroundColor(.secondary)
                 }
                 
-                NavigationLink {
-                    Text("Privacy Policy")
-                } label: {
+                NavigationLink(value: SettingsFlow.privacyPolicy) {
                     Text("Privacy Policy")
                 }
                 
-                NavigationLink {
-                    Text("Terms of Service")
-                } label: {
+                NavigationLink(value: SettingsFlow.termsOfService) {
                     Text("Terms of Service")
                 }
                 
@@ -204,9 +194,7 @@ struct ProfileRow: View {
             
             Spacer()
             
-            NavigationLink {
-                EditProfileView()
-            } label: {
+            NavigationLink(value: SettingsFlow.profile) {
                 Text("Edit")
                     .font(.subheadline)
                     .foregroundColor(.appPrimary)

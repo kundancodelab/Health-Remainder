@@ -39,6 +39,11 @@
 		CE5735AF2F1BDAE900A16EA6 /* RewardsRoutesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735AE2F1BDAE900A16EA6 /* RewardsRoutesFlow.swift */; };
 		CE5735B12F1BDAF400A16EA6 /* QuizRoutesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735B02F1BDAF400A16EA6 /* QuizRoutesFlow.swift */; };
 		CE5735B32F1BDAFF00A16EA6 /* HomeRoutesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735B22F1BDAFF00A16EA6 /* HomeRoutesFlow.swift */; };
+		CE5735B62F1BEAB300A16EA6 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735B52F1BEAB300A16EA6 /* ErrorManager.swift */; };
+		CE5735B92F1BEB0100A16EA6 /* AuthUserDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735B82F1BEB0100A16EA6 /* AuthUserDM.swift */; };
+		CE5735C02F1BEBFD00A16EA6 /* AuthReposityPr.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735BF2F1BEBFD00A16EA6 /* AuthReposityPr.swift */; };
+		CE5735C22F1BEC1000A16EA6 /* AuthRepositoryPrImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735C12F1BEC1000A16EA6 /* AuthRepositoryPrImp.swift */; };
+		CE5735C42F1BECF200A16EA6 /* AuthUserPersistentDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735C32F1BECF200A16EA6 /* AuthUserPersistentDM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +80,11 @@
 		CE5735AE2F1BDAE900A16EA6 /* RewardsRoutesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsRoutesFlow.swift; sourceTree = "<group>"; };
 		CE5735B02F1BDAF400A16EA6 /* QuizRoutesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRoutesFlow.swift; sourceTree = "<group>"; };
 		CE5735B22F1BDAFF00A16EA6 /* HomeRoutesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoutesFlow.swift; sourceTree = "<group>"; };
+		CE5735B52F1BEAB300A16EA6 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		CE5735B82F1BEB0100A16EA6 /* AuthUserDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserDM.swift; sourceTree = "<group>"; };
+		CE5735BF2F1BEBFD00A16EA6 /* AuthReposityPr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthReposityPr.swift; sourceTree = "<group>"; };
+		CE5735C12F1BEC1000A16EA6 /* AuthRepositoryPrImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryPrImp.swift; sourceTree = "<group>"; };
+		CE5735C32F1BECF200A16EA6 /* AuthUserPersistentDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserPersistentDM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,13 +142,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CE57356A2F1BD4A600A16EA6 /* Services */ = {
+		CE57356A2F1BD4A600A16EA6 /* Core-Services */ = {
 			isa = PBXGroup;
 			children = (
 				CE5735682F1BD4A600A16EA6 /* AuthManager.swift */,
 				CE5735692F1BD4A600A16EA6 /* NotificationManager.swift */,
 			);
-			path = Services;
+			path = "Core-Services";
 			sourceTree = "<group>";
 		};
 		CE57356C2F1BD4A600A16EA6 /* Stores */ = {
@@ -152,9 +162,10 @@
 		CE57356E2F1BD4A600A16EA6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CE5735B42F1BEAA000A16EA6 /* ErrorManager */,
 				CE5735632F1BD4A600A16EA6 /* Data */,
 				CE5735672F1BD4A600A16EA6 /* Models */,
-				CE57356A2F1BD4A600A16EA6 /* Services */,
+				CE57356A2F1BD4A600A16EA6 /* Core-Services */,
 				CE57356C2F1BD4A600A16EA6 /* Stores */,
 				CE57356D2F1BD4A600A16EA6 /* Theme.swift */,
 			);
@@ -164,10 +175,12 @@
 		CE5735712F1BD4A600A16EA6 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				CE5735BA2F1BEB9400A16EA6 /* AuthServices */,
+				CE5735B72F1BEAEB00A16EA6 /* Models */,
 				CE5735A42F1BD54900A16EA6 /* ViewModel */,
 				CE5735A12F1BD51600A16EA6 /* Auth+Routes+Flow */,
-				CE57356F2F1BD4A600A16EA6 /* LoginView.swift */,
 				CE5735702F1BD4A600A16EA6 /* OnboardingView.swift */,
+				CE57356F2F1BD4A600A16EA6 /* LoginView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -234,8 +247,8 @@
 		CE5735842F1BD4A600A16EA6 /* My Supplement */ = {
 			isa = PBXGroup;
 			children = (
-				CE57359E2F1BD4AA00A16EA6 /* Router */,
 				CE5735602F1BD4A600A16EA6 /* App */,
+				CE57359E2F1BD4AA00A16EA6 /* Router */,
 				CE57356E2F1BD4A600A16EA6 /* Core */,
 				CE57357E2F1BD4A600A16EA6 /* Features */,
 				CE57357F2F1BD4A600A16EA6 /* Assets.xcassets */,
@@ -309,6 +322,64 @@
 				CE5735AC2F1BDADA00A16EA6 /* SettingsRoutesFlow.swift */,
 			);
 			path = "Settings+Routes+Flow";
+			sourceTree = "<group>";
+		};
+		CE5735B42F1BEAA000A16EA6 /* ErrorManager */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735B52F1BEAB300A16EA6 /* ErrorManager.swift */,
+			);
+			path = ErrorManager;
+			sourceTree = "<group>";
+		};
+		CE5735B72F1BEAEB00A16EA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735B82F1BEB0100A16EA6 /* AuthUserDM.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE5735BA2F1BEB9400A16EA6 /* AuthServices */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735BE2F1BEBC100A16EA6 /* Repository */,
+				CE5735BD2F1BEBBC00A16EA6 /* Local */,
+				CE5735BC2F1BEBB300A16EA6 /* Remote */,
+				CE5735BB2F1BEBA500A16EA6 /* Mock */,
+			);
+			path = AuthServices;
+			sourceTree = "<group>";
+		};
+		CE5735BB2F1BEBA500A16EA6 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		CE5735BC2F1BEBB300A16EA6 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		CE5735BD2F1BEBBC00A16EA6 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735C32F1BECF200A16EA6 /* AuthUserPersistentDM.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CE5735BE2F1BEBC100A16EA6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735BF2F1BEBFD00A16EA6 /* AuthReposityPr.swift */,
+				CE5735C12F1BEC1000A16EA6 /* AuthRepositoryPrImp.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,8 +456,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5735C42F1BECF200A16EA6 /* AuthUserPersistentDM.swift in Sources */,
+				CE5735C22F1BEC1000A16EA6 /* AuthRepositoryPrImp.swift in Sources */,
 				CE5735852F1BD4A600A16EA6 /* MainTabView.swift in Sources */,
 				CE5735862F1BD4A600A16EA6 /* RootView.swift in Sources */,
+				CE5735C02F1BEBFD00A16EA6 /* AuthReposityPr.swift in Sources */,
 				CE5735872F1BD4A600A16EA6 /* DataManager.swift in Sources */,
 				CE5735882F1BD4A600A16EA6 /* SwiftDataModels.swift in Sources */,
 				CE5735892F1BD4A600A16EA6 /* Quiz.swift in Sources */,
@@ -404,11 +478,13 @@
 				CE5735942F1BD4A600A16EA6 /* RewardsView.swift in Sources */,
 				CE5735A02F1BD4ED00A16EA6 /* Router.swift in Sources */,
 				CE5735B12F1BDAF400A16EA6 /* QuizRoutesFlow.swift in Sources */,
+				CE5735B92F1BEB0100A16EA6 /* AuthUserDM.swift in Sources */,
 				CE5735952F1BD4A600A16EA6 /* HistoryViews.swift in Sources */,
 				CE5735962F1BD4A600A16EA6 /* SettingsView.swift in Sources */,
 				CE5735AD2F1BDADA00A16EA6 /* SettingsRoutesFlow.swift in Sources */,
 				CE5735A62F1BD55500A16EA6 /* AuthViewModel.swift in Sources */,
 				CE5735972F1BD4A600A16EA6 /* SupplementDetailView.swift in Sources */,
+				CE5735B62F1BEAB300A16EA6 /* ErrorManager.swift in Sources */,
 				CE5735AF2F1BDAE900A16EA6 /* RewardsRoutesFlow.swift in Sources */,
 				CE5735982F1BD4A600A16EA6 /* SupplementListView.swift in Sources */,
 				CE5735992F1BD4A600A16EA6 /* ContentView.swift in Sources */,
@@ -546,6 +622,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YLA926J2Q5;
@@ -563,7 +640,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "iosdevkundan.My-Supplement";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -578,6 +660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YLA926J2Q5;
@@ -595,7 +678,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "iosdevkundan.My-Supplement";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;

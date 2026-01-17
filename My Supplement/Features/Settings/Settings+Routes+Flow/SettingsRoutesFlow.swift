@@ -36,7 +36,7 @@ enum SettingsFlow: NavigationDestination, Hashable {
     var destinationView: some View {
         switch self {
         case .profile:
-            ProfileRow()
+            EditProfileView()
         case .lifeStage:
             LifeStageSettingsView()
         case .supplementHistory:
