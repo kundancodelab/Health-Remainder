@@ -1,0 +1,422 @@
+[
+    {
+        "id": "q1",
+        "question": "Which vitamin is primarily synthesized in the skin through sun exposure?",
+        "options": [
+            "Vitamin A",
+            "Vitamin C",
+            "Vitamin D",
+            "Vitamin E"
+        ],
+        "correctAnswer": "Vitamin D",
+        "explanation": "Vitamin D is synthesized when UVB rays from sunlight interact with cholesterol in skin cells.",
+        "category": "Vitamins",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q2",
+        "question": "What mineral is best known for supporting immune function and wound healing?",
+        "options": [
+            "Calcium",
+            "Zinc",
+            "Iron",
+            "Potassium"
+        ],
+        "correctAnswer": "Zinc",
+        "explanation": "Zinc plays a crucial role in immune cell function and the body's healing processes.",
+        "category": "Minerals",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q3",
+        "question": "Which vitamin enhances the absorption of iron from plant-based foods?",
+        "options": [
+            "Vitamin A",
+            "Vitamin B12",
+            "Vitamin C",
+            "Vitamin K"
+        ],
+        "correctAnswer": "Vitamin C",
+        "explanation": "Vitamin C converts non-heme iron into a form that's easier for the body to absorb.",
+        "category": "Vitamins",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q4",
+        "question": "Vitamin K2 helps direct calcium to which part of the body?",
+        "options": [
+            "Muscles",
+            "Brain",
+            "Bones",
+            "Liver"
+        ],
+        "correctAnswer": "Bones",
+        "explanation": "Vitamin K2 activates proteins that help deposit calcium in bones and teeth.",
+        "category": "Vitamins",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q5",
+        "question": "What can high doses of Vitamin C cause?",
+        "options": [
+            "Hair loss",
+            "Digestive upset",
+            "Vision problems",
+            "Muscle weakness"
+        ],
+        "correctAnswer": "Digestive upset",
+        "explanation": "High doses of Vitamin C (>2000mg/day) may cause diarrhea or stomach discomfort.",
+        "category": "Vitamins",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "q6",
+        "question": "Which B vitamin is essential for red blood cell formation and nervous system function?",
+        "options": [
+            "B1 (Thiamine)",
+            "B6 (Pyridoxine)",
+            "B9 (Folate)",
+            "B12 (Cobalamin)"
+        ],
+        "correctAnswer": "B12 (Cobalamin)",
+        "explanation": "Vitamin B12 is crucial for DNA synthesis, red blood cell formation, and maintaining the myelin sheath of nerves.",
+        "category": "Vitamins",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q7",
+        "question": "Magnesium is involved in approximately how many biochemical reactions in the body?",
+        "options": [
+            "50",
+            "100",
+            "300",
+            "500"
+        ],
+        "correctAnswer": "300",
+        "explanation": "Magnesium is a cofactor in over 300 enzyme systems that regulate diverse biochemical reactions.",
+        "category": "Minerals",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q8",
+        "question": "Which form of magnesium is best known for supporting relaxation and sleep?",
+        "options": [
+            "Magnesium Oxide",
+            "Magnesium Citrate",
+            "Magnesium Glycinate",
+            "Magnesium Sulfate"
+        ],
+        "correctAnswer": "Magnesium Glycinate",
+        "explanation": "Magnesium glycinate is bound to glycine, an amino acid that promotes calmness and better sleep.",
+        "category": "Minerals",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "q9",
+        "question": "Which supplement should vegetarians and vegans especially consider taking?",
+        "options": [
+            "Vitamin C",
+            "Vitamin B12",
+            "Vitamin E",
+            "Biotin"
+        ],
+        "correctAnswer": "Vitamin B12",
+        "explanation": "Vitamin B12 is primarily found in animal products, making supplementation essential for those on plant-based diets.",
+        "category": "Vitamins",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q10",
+        "question": "What is the recommended way to take fat-soluble vitamins for optimal absorption?",
+        "options": [
+            "On an empty stomach",
+            "With water only",
+            "With a fat-containing meal",
+            "Before bedtime"
+        ],
+        "correctAnswer": "With a fat-containing meal",
+        "explanation": "Fat-soluble vitamins (A, D, E, K) require dietary fat for proper absorption in the intestines.",
+        "category": "General",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q11",
+        "question": "Which mineral competes with zinc for absorption when taken together?",
+        "options": [
+            "Magnesium",
+            "Calcium",
+            "Iron",
+            "Copper"
+        ],
+        "correctAnswer": "Iron",
+        "explanation": "Iron and zinc compete for the same absorption pathways, so taking them together may reduce the absorption of both.",
+        "category": "Minerals",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "q12",
+        "question": "What is the primary role of Vitamin A in the body?",
+        "options": [
+            "Energy production",
+            "Vision and immune function",
+            "Bone density",
+            "Blood clotting"
+        ],
+        "correctAnswer": "Vision and immune function",
+        "explanation": "Vitamin A is essential for maintaining healthy vision, especially night vision, and supporting immune function.",
+        "category": "Vitamins",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q13",
+        "question": "Which supplement is often recommended to take with Vitamin D for bone health?",
+        "options": [
+            "Vitamin C",
+            "Vitamin K2",
+            "Vitamin B6",
+            "Vitamin E"
+        ],
+        "correctAnswer": "Vitamin K2",
+        "explanation": "Vitamin K2 works synergistically with Vitamin D to ensure calcium is deposited in bones rather than soft tissues.",
+        "category": "Vitamins",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q14",
+        "question": "What mineral deficiency is the most common nutritional disorder worldwide?",
+        "options": [
+            "Zinc",
+            "Calcium",
+            "Iron",
+            "Iodine"
+        ],
+        "correctAnswer": "Iron",
+        "explanation": "Iron deficiency anemia affects billions of people globally and is the most common nutritional deficiency.",
+        "category": "Minerals",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q15",
+        "question": "Which vitamin acts as a powerful antioxidant protecting cell membranes?",
+        "options": [
+            "Vitamin A",
+            "Vitamin C",
+            "Vitamin D",
+            "Vitamin E"
+        ],
+        "correctAnswer": "Vitamin E",
+        "explanation": "Vitamin E is a fat-soluble antioxidant that protects cell membranes from oxidative damage.",
+        "category": "Vitamins",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q16",
+        "question": "Omega-3 fatty acids are best known for supporting which body system?",
+        "options": [
+            "Digestive system",
+            "Cardiovascular system",
+            "Skeletal system",
+            "Urinary system"
+        ],
+        "correctAnswer": "Cardiovascular system",
+        "explanation": "Omega-3s help reduce inflammation, lower triglycerides, and support overall heart health.",
+        "category": "Specialty",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q17",
+        "question": "What is the best time to take a probiotic supplement?",
+        "options": [
+            "With a heavy meal",
+            "On an empty stomach or with a light meal",
+            "Before exercise",
+            "Right before bed"
+        ],
+        "correctAnswer": "On an empty stomach or with a light meal",
+        "explanation": "Probiotics survive better when stomach acid is lower, which occurs on an empty stomach or with minimal food.",
+        "category": "Specialty",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q18",
+        "question": "Which mineral is essential for thyroid hormone production?",
+        "options": [
+            "Iron",
+            "Zinc",
+            "Selenium",
+            "Iodine"
+        ],
+        "correctAnswer": "Iodine",
+        "explanation": "Iodine is a key component of thyroid hormones T3 and T4, which regulate metabolism.",
+        "category": "Minerals",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q19",
+        "question": "CoQ10 is particularly important for which organ due to its high energy demands?",
+        "options": [
+            "Liver",
+            "Kidneys",
+            "Heart",
+            "Lungs"
+        ],
+        "correctAnswer": "Heart",
+        "explanation": "CoQ10 plays a vital role in cellular energy production, making it essential for the heart's constant energy needs.",
+        "category": "Specialty",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q20",
+        "question": "What happens to water-soluble vitamins when consumed in excess?",
+        "options": [
+            "Stored in fat tissue",
+            "Stored in bones",
+            "Excreted in urine",
+            "Converted to energy"
+        ],
+        "correctAnswer": "Excreted in urine",
+        "explanation": "Water-soluble vitamins (B vitamins and C) are not stored in the body and excess amounts are excreted through urine.",
+        "category": "General",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q21",
+        "question": "Which herbal supplement is known for supporting liver health and detoxification?",
+        "options": [
+            "Ginkgo Biloba",
+            "Milk Thistle",
+            "Echinacea",
+            "St. John's Wort"
+        ],
+        "correctAnswer": "Milk Thistle",
+        "explanation": "Milk thistle contains silymarin, which has antioxidant and anti-inflammatory properties that support liver function.",
+        "category": "Herbal",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q22",
+        "question": "Selenium works synergistically with which vitamin as an antioxidant?",
+        "options": [
+            "Vitamin A",
+            "Vitamin C",
+            "Vitamin D",
+            "Vitamin E"
+        ],
+        "correctAnswer": "Vitamin E",
+        "explanation": "Selenium and Vitamin E work together to protect cells from oxidative damage.",
+        "category": "Minerals",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "q23",
+        "question": "Which supplement is commonly used to support joint health and cartilage?",
+        "options": [
+            "Fish Oil",
+            "Glucosamine",
+            "Biotin",
+            "Collagen"
+        ],
+        "correctAnswer": "Glucosamine",
+        "explanation": "Glucosamine is a natural compound found in cartilage and is commonly used to support joint health.",
+        "category": "Specialty",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q24",
+        "question": "What is the primary concern with taking iron supplements on an empty stomach?",
+        "options": [
+            "Reduced absorption",
+            "Nausea and stomach upset",
+            "Drowsiness",
+            "Headaches"
+        ],
+        "correctAnswer": "Nausea and stomach upset",
+        "explanation": "Iron can irritate the stomach lining when taken without food, causing nausea and digestive discomfort.",
+        "category": "Minerals",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q25",
+        "question": "Ashwagandha is classified as what type of supplement?",
+        "options": [
+            "Probiotic",
+            "Adaptogen",
+            "Enzyme",
+            "Amino acid"
+        ],
+        "correctAnswer": "Adaptogen",
+        "explanation": "Ashwagandha is an adaptogenic herb that helps the body manage stress and maintain balance.",
+        "category": "Herbal",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "q26",
+        "question": "Which vitamin deficiency can cause a condition called scurvy?",
+        "options": [
+            "Vitamin A",
+            "Vitamin B12",
+            "Vitamin C",
+            "Vitamin D"
+        ],
+        "correctAnswer": "Vitamin C",
+        "explanation": "Scurvy is caused by severe Vitamin C deficiency and leads to fatigue, gum disease, and poor wound healing.",
+        "category": "Vitamins",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q27",
+        "question": "What is the RDA (Recommended Dietary Allowance) unit for Vitamin D?",
+        "options": [
+            "Milligrams (mg)",
+            "International Units (IU)",
+            "Micrograms (mcg)",
+            "Both IU and mcg are used"
+        ],
+        "correctAnswer": "Both IU and mcg are used",
+        "explanation": "Vitamin D is measured in both IU and mcg. 1 mcg equals 40 IU of Vitamin D.",
+        "category": "General",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "q28",
+        "question": "Which supplement may help reduce symptoms of ADHD in children?",
+        "options": [
+            "Vitamin C",
+            "Omega-3 fatty acids",
+            "Calcium",
+            "Vitamin B1"
+        ],
+        "correctAnswer": "Omega-3 fatty acids",
+        "explanation": "Studies suggest omega-3s may help improve attention and reduce hyperactivity in children with ADHD.",
+        "category": "Specialty",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "q29",
+        "question": "Folate is especially important during which life stage?",
+        "options": [
+            "Childhood",
+            "Adolescence",
+            "Pregnancy",
+            "Old age"
+        ],
+        "correctAnswer": "Pregnancy",
+        "explanation": "Adequate folate intake before and during pregnancy helps prevent neural tube defects in developing babies.",
+        "category": "Vitamins",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "q30",
+        "question": "Which beverage can significantly reduce iron absorption when consumed with meals?",
+        "options": [
+            "Orange juice",
+            "Milk",
+            "Tea or Coffee",
+            "Water"
+        ],
+        "correctAnswer": "Tea or Coffee",
+        "explanation": "Tannins and polyphenols in tea and coffee can inhibit iron absorption by up to 60%.",
+        "category": "General",
+        "difficulty": "Medium"
+    }
+]

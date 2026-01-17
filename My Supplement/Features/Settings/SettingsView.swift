@@ -13,6 +13,11 @@ struct SettingsView: View {
     @State private var dailyReminderTime = Date()
     @State private var selectedLanguage = "English"
     @State private var showLogoutAlert = false
+    @State private var showDeleteAccountAlert = false
+    @State private var notificationPermissionDenied = false
+    
+    private var notificationManager: NotificationManager { NotificationManager.shared }
+    private var authManager: AuthManager { AuthManager.shared }
     
     var body: some View {
         List {
@@ -24,6 +29,21 @@ struct SettingsView: View {
             // Notifications
             Section("Notifications") {
                 Toggle("Daily Reminders", isOn: $notificationsEnabled)
+                    .onChange(of: notificationsEnabled) { _, newValue in
+                        Task {
+                            if newValue {
+                                let granted = await notificationManager.requestAuthorization()
+                                if !granted {
+                                    notificationsEnabled = false
+                                    notificationPermissionDenied = true
+                                } else {
+                                    await notificationManager.scheduleDailyReminder(at: dailyReminderTime, enabled: true)
+                                }
+                            } else {
+                                await notificationManager.scheduleDailyReminder(at: dailyReminderTime, enabled: false)
+                            }
+                        }
+                    }
                 
                 if notificationsEnabled {
                     DatePicker(
@@ -31,6 +51,11 @@ struct SettingsView: View {
                         selection: $dailyReminderTime,
                         displayedComponents: .hourAndMinute
                     )
+                    .onChange(of: dailyReminderTime) { _, newTime in
+                        Task {
+                            await notificationManager.scheduleDailyReminder(at: newTime, enabled: true)
+                        }
+                    }
                 }
             }
             
@@ -57,13 +82,13 @@ struct SettingsView: View {
             // Data
             Section("Data") {
                 NavigationLink {
-                    Text("Supplement History")
+                    SupplementHistoryView()
                 } label: {
                     Label("History", systemImage: "clock.arrow.circlepath")
                 }
                 
                 NavigationLink {
-                    Text("Quiz Attempts")
+                    QuizHistoryView()
                 } label: {
                     Label("Quiz History", systemImage: "list.clipboard")
                 }
@@ -128,11 +153,31 @@ struct SettingsView: View {
         } message: {
             Text("Are you sure you want to log out?")
         }
+        .alert("Notifications Disabled", isPresented: $notificationPermissionDenied) {
+            Button("Open Settings") {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url)
+                }
+            }
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("Please enable notifications in Settings to receive daily reminders.")
+        }
+        .onAppear {
+            Task {
+                await notificationManager.checkAuthorizationStatus()
+                notificationsEnabled = notificationManager.isAuthorized
+            }
+        }
     }
     
     private func logout() {
-        UserDefaults.standard.removeObject(forKey: "uid")
-        appState.isAuthenticated = false
+        do {
+            try authManager.signOut()
+            appState.refreshAuthState()
+        } catch {
+            print("Logout error: \(error)")
+        }
     }
 }
 

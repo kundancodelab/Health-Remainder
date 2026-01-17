@@ -12,8 +12,12 @@ struct HomeView: View {
     @State private var selectedDate = Date()
     @State private var showToast = false
     @State private var toastMessage = ""
+    @State private var totalCoins: Int = 0
+    @State private var currentStreak: Int = 0
+    @State private var takenToday: Int = 0
     
     private let calendar = Calendar.current
+    private var dataManager: DataManager { DataManager.shared }
     
     var body: some View {
         ScrollView {
@@ -38,6 +42,18 @@ struct HomeView: View {
         .background(Color.appBackground)
         .navigationTitle("Home")
         .toast(isShowing: $showToast, message: toastMessage, type: .success)
+        .onAppear {
+            refreshStats()
+        }
+    }
+    
+    private func refreshStats() {
+        let summary = dataManager.getOrCreateRewardsSummary()
+        totalCoins = summary.availableCoins
+        currentStreak = summary.currentStreak
+        
+        let todayStats = dataManager.getTodayStats()
+        takenToday = todayStats.taken
     }
     
     // MARK: - Header
@@ -57,7 +73,7 @@ struct HomeView: View {
             HStack(spacing: 6) {
                 Image(systemName: "star.circle.fill")
                     .foregroundColor(.yellow)
-                Text("0")
+                Text("\(totalCoins)")
                     .font(.headline)
             }
             .padding(.horizontal, 12)
@@ -115,9 +131,18 @@ struct HomeView: View {
                             supplement: supplement,
                             isTaken: store.isTaken(supplement.id, for: selectedDate)
                         ) {
+                            let coinsEarned = dataManager.markSupplementTaken(
+                                supplement.id,
+                                supplementName: supplement.name,
+                                for: selectedDate
+                            )
                             store.markAsTaken(supplement.id, for: selectedDate)
-                            toastMessage = "\(supplement.name) marked as taken! +5 coins"
-                            showToast = true
+                            
+                            if coinsEarned > 0 {
+                                toastMessage = "\(supplement.name) marked as taken! +\(coinsEarned) coins"
+                                showToast = true
+                                refreshStats()
+                            }
                         }
                     }
                 }
@@ -145,8 +170,8 @@ struct HomeView: View {
     // MARK: - Stats
     private var statsSection: some View {
         HStack(spacing: 12) {
-            StatCard(title: "Taken Today", value: "0", icon: "checkmark.circle.fill", color: .green)
-            StatCard(title: "Streak", value: "0 days", icon: "flame.fill", color: .orange)
+            StatCard(title: "Taken Today", value: "\(takenToday)", icon: "checkmark.circle.fill", color: .green)
+            StatCard(title: "Streak", value: "\(currentStreak) days", icon: "flame.fill", color: .orange)
         }
     }
     

@@ -6,16 +6,21 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     @EnvironmentObject var appState: AppState
     @State private var email = ""
     @State private var password = ""
-    @State private var isLoading = false
     @State private var showError = false
     @State private var errorMessage = ""
     @State private var showSignUp = false
     @State private var rememberMe = false
+    @State private var showForgotPassword = false
+    @State private var forgotPasswordEmail = ""
+    @State private var showPasswordResetSent = false
+    
+    private var authManager: AuthManager { AuthManager.shared }
     
     var body: some View {
         ScrollView {
@@ -41,11 +46,28 @@ struct LoginView: View {
             .padding(24)
         }
         .background(Color.appBackground)
-        .loadingOverlay(isLoading: isLoading, message: "Logging in...")
+        .loadingOverlay(isLoading: authManager.isLoading, message: "Logging in...")
         .alert("Error", isPresented: $showError) {
             Button("OK") { }
         } message: {
             Text(errorMessage)
+        }
+        .alert("Password Reset", isPresented: $showForgotPassword) {
+            TextField("Email", text: $forgotPasswordEmail)
+                .textContentType(.emailAddress)
+            Button("Cancel", role: .cancel) { }
+            Button("Send Reset Link") {
+                Task {
+                    await sendPasswordReset()
+                }
+            }
+        } message: {
+            Text("Enter your email to receive a password reset link")
+        }
+        .alert("Reset Email Sent", isPresented: $showPasswordResetSent) {
+            Button("OK") { }
+        } message: {
+            Text("Check your inbox for password reset instructions")
         }
         .sheet(isPresented: $showSignUp) {
             SignUpView()
@@ -137,7 +159,8 @@ struct LoginView: View {
                 Spacer()
                 
                 Button("Forgot Password?") {
-                    // Handle forgot password
+                    forgotPasswordEmail = email
+                    showForgotPassword = true
                 }
                 .font(.caption)
                 .foregroundColor(.appPrimary)
@@ -148,7 +171,9 @@ struct LoginView: View {
     // MARK: - Login Button
     private var loginButton: some View {
         Button {
-            login()
+            Task {
+                await login()
+            }
         } label: {
             Text("Sign In")
         }
@@ -174,12 +199,14 @@ struct LoginView: View {
     // MARK: - Social Buttons
     private var socialButtons: some View {
         HStack(spacing: 16) {
-            SocialLoginButton(icon: "apple.logo", name: "Apple") {
-                // Apple login
-            }
+            SignInWithAppleButton()
+                .frame(height: 50)
+                .cornerRadius(12)
             
             SocialLoginButton(icon: "g.circle.fill", name: "Google") {
-                // Google login
+                Task {
+                    await signInWithGoogle()
+                }
             }
         }
     }
@@ -199,22 +226,33 @@ struct LoginView: View {
     }
     
     // MARK: - Actions
-    private func login() {
-        guard !email.isEmpty, !password.isEmpty else {
-            errorMessage = "Please fill in all fields"
+    private func login() async {
+        do {
+            try await authManager.signIn(email: email, password: password)
+            appState.refreshAuthState()
+        } catch {
+            errorMessage = error.localizedDescription
             showError = true
-            return
         }
-        
-        isLoading = true
-        
-        // Simulate login
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            isLoading = false
-            
-            // For demo, accept any credentials
-            UserDefaults.standard.set("demo_user_id", forKey: "uid")
-            appState.isAuthenticated = true
+    }
+    
+    private func signInWithGoogle() async {
+        do {
+            try await authManager.signInWithGoogle()
+            appState.refreshAuthState()
+        } catch {
+            errorMessage = error.localizedDescription
+            showError = true
+        }
+    }
+    
+    private func sendPasswordReset() async {
+        do {
+            try await authManager.sendPasswordReset(email: forgotPasswordEmail)
+            showPasswordResetSent = true
+        } catch {
+            errorMessage = error.localizedDescription
+            showError = true
         }
     }
 }
@@ -242,13 +280,81 @@ struct SocialLoginButton: View {
     }
 }
 
+// MARK: - Sign In With Apple Button
+struct SignInWithAppleButton: UIViewRepresentable {
+    @EnvironmentObject var appState: AppState
+    
+    func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
+        let button = ASAuthorizationAppleIDButton(type: .signIn, style: .black)
+        button.addTarget(context.coordinator, action: #selector(Coordinator.handleAppleSignIn), for: .touchUpInside)
+        return button
+    }
+    
+    func updateUIView(_ uiView: ASAuthorizationAppleIDButton, context: Context) {}
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(appState: appState)
+    }
+    
+    class Coordinator: NSObject, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+        var appState: AppState
+        
+        init(appState: AppState) {
+            self.appState = appState
+        }
+        
+        @objc func handleAppleSignIn() {
+            let provider = ASAuthorizationAppleIDProvider()
+            let request = provider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+            
+            let nonce = AuthManager.shared.prepareAppleSignIn()
+            request.nonce = nonce
+            
+            let controller = ASAuthorizationController(authorizationRequests: [request])
+            controller.delegate = self
+            controller.presentationContextProvider = self
+            controller.performRequests()
+        }
+        
+        func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+            guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let window = scene.windows.first else {
+                return UIWindow()
+            }
+            return window
+        }
+        
+        func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+            Task {
+                do {
+                    try await AuthManager.shared.handleAppleSignIn(authorization: authorization)
+                    await MainActor.run {
+                        appState.refreshAuthState()
+                    }
+                } catch {
+                    print("Apple Sign-In error: \(error)")
+                }
+            }
+        }
+        
+        func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+            print("Apple Sign-In failed: \(error)")
+        }
+    }
+}
+
 // MARK: - Sign Up View
 struct SignUpView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var appState: AppState
     @State private var name = ""
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var isLoading = false
+    @State private var showError = false
+    @State private var errorMessage = ""
     
     var body: some View {
         NavigationStack {
@@ -265,14 +371,28 @@ struct SignUpView: View {
                         SecureFormField(label: "Confirm Password", icon: "lock", text: $confirmPassword)
                     }
                     
-                    Button("Create Account") {
-                        // Create account
-                        dismiss()
+                    if password != confirmPassword && !confirmPassword.isEmpty {
+                        Text("Passwords do not match")
+                            .font(.caption)
+                            .foregroundColor(.red)
                     }
-                    .buttonStyle(PrimaryButtonStyle())
+                    
+                    Button("Create Account") {
+                        Task {
+                            await createAccount()
+                        }
+                    }
+                    .buttonStyle(PrimaryButtonStyle(isDisabled: !isFormValid))
+                    .disabled(!isFormValid)
                     .padding(.top)
                 }
                 .padding(24)
+            }
+            .loadingOverlay(isLoading: isLoading, message: "Creating account...")
+            .alert("Error", isPresented: $showError) {
+                Button("OK") { }
+            } message: {
+                Text(errorMessage)
             }
             .navigationTitle("Sign Up")
             .navigationBarTitleDisplayMode(.inline)
@@ -283,6 +403,24 @@ struct SignUpView: View {
                     }
                 }
             }
+        }
+    }
+    
+    private var isFormValid: Bool {
+        !name.isEmpty && !email.isEmpty && !password.isEmpty && password == confirmPassword && password.count >= 6
+    }
+    
+    private func createAccount() async {
+        isLoading = true
+        defer { isLoading = false }
+        
+        do {
+            try await AuthManager.shared.signUp(email: email, password: password, displayName: name)
+            appState.refreshAuthState()
+            dismiss()
+        } catch {
+            errorMessage = error.localizedDescription
+            showError = true
         }
     }
 }

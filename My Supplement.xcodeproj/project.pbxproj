@@ -6,17 +6,76 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE5735852F1BD4A600A16EA6 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57355E2F1BD4A600A16EA6 /* MainTabView.swift */; };
+		CE5735862F1BD4A600A16EA6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57355F2F1BD4A600A16EA6 /* RootView.swift */; };
+		CE5735872F1BD4A600A16EA6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735612F1BD4A600A16EA6 /* DataManager.swift */; };
+		CE5735882F1BD4A600A16EA6 /* SwiftDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735622F1BD4A600A16EA6 /* SwiftDataModels.swift */; };
+		CE5735892F1BD4A600A16EA6 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735642F1BD4A600A16EA6 /* Quiz.swift */; };
+		CE57358A2F1BD4A600A16EA6 /* Supplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735652F1BD4A600A16EA6 /* Supplement.swift */; };
+		CE57358B2F1BD4A600A16EA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735662F1BD4A600A16EA6 /* User.swift */; };
+		CE57358C2F1BD4A600A16EA6 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735682F1BD4A600A16EA6 /* AuthManager.swift */; };
+		CE57358D2F1BD4A600A16EA6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735692F1BD4A600A16EA6 /* NotificationManager.swift */; };
+		CE57358E2F1BD4A600A16EA6 /* SupplementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57356B2F1BD4A600A16EA6 /* SupplementStore.swift */; };
+		CE57358F2F1BD4A600A16EA6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57356D2F1BD4A600A16EA6 /* Theme.swift */; };
+		CE5735902F1BD4A600A16EA6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57356F2F1BD4A600A16EA6 /* LoginView.swift */; };
+		CE5735912F1BD4A600A16EA6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735702F1BD4A600A16EA6 /* OnboardingView.swift */; };
+		CE5735922F1BD4A600A16EA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735722F1BD4A600A16EA6 /* HomeView.swift */; };
+		CE5735932F1BD4A600A16EA6 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735742F1BD4A600A16EA6 /* QuizView.swift */; };
+		CE5735942F1BD4A600A16EA6 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735762F1BD4A600A16EA6 /* RewardsView.swift */; };
+		CE5735952F1BD4A600A16EA6 /* HistoryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735782F1BD4A600A16EA6 /* HistoryViews.swift */; };
+		CE5735962F1BD4A600A16EA6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735792F1BD4A600A16EA6 /* SettingsView.swift */; };
+		CE5735972F1BD4A600A16EA6 /* SupplementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57357B2F1BD4A600A16EA6 /* SupplementDetailView.swift */; };
+		CE5735982F1BD4A600A16EA6 /* SupplementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57357C2F1BD4A600A16EA6 /* SupplementListView.swift */; };
+		CE5735992F1BD4A600A16EA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735802F1BD4A600A16EA6 /* ContentView.swift */; };
+		CE57359A2F1BD4A600A16EA6 /* My_SupplementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735812F1BD4A600A16EA6 /* My_SupplementApp.swift */; };
+		CE57359B2F1BD4A600A16EA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE57357F2F1BD4A600A16EA6 /* Assets.xcassets */; };
+		CE57359C2F1BD4A600A16EA6 /* QuizQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = CE5735822F1BD4A600A16EA6 /* QuizQuestions.json */; };
+		CE57359D2F1BD4A600A16EA6 /* SupplementInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = CE5735832F1BD4A600A16EA6 /* SupplementInfo.json */; };
+		CE5735A02F1BD4ED00A16EA6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57359F2F1BD4ED00A16EA6 /* Router.swift */; };
+		CE5735A32F1BD53100A16EA6 /* AuthRoutesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735A22F1BD53100A16EA6 /* AuthRoutesFlow.swift */; };
+		CE5735A62F1BD55500A16EA6 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735A52F1BD55500A16EA6 /* AuthViewModel.swift */; };
+		CE5735AD2F1BDADA00A16EA6 /* SettingsRoutesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735AC2F1BDADA00A16EA6 /* SettingsRoutesFlow.swift */; };
+		CE5735AF2F1BDAE900A16EA6 /* RewardsRoutesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735AE2F1BDAE900A16EA6 /* RewardsRoutesFlow.swift */; };
+		CE5735B12F1BDAF400A16EA6 /* QuizRoutesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735B02F1BDAF400A16EA6 /* QuizRoutesFlow.swift */; };
+		CE5735B32F1BDAFF00A16EA6 /* HomeRoutesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5735B22F1BDAFF00A16EA6 /* HomeRoutesFlow.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		CE28681E2F1BC5AC00751167 /* My Supplement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Supplement.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE57355E2F1BD4A600A16EA6 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		CE57355F2F1BD4A600A16EA6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		CE5735612F1BD4A600A16EA6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CE5735622F1BD4A600A16EA6 /* SwiftDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataModels.swift; sourceTree = "<group>"; };
+		CE5735642F1BD4A600A16EA6 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		CE5735652F1BD4A600A16EA6 /* Supplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplement.swift; sourceTree = "<group>"; };
+		CE5735662F1BD4A600A16EA6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE5735682F1BD4A600A16EA6 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		CE5735692F1BD4A600A16EA6 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		CE57356B2F1BD4A600A16EA6 /* SupplementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementStore.swift; sourceTree = "<group>"; };
+		CE57356D2F1BD4A600A16EA6 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		CE57356F2F1BD4A600A16EA6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CE5735702F1BD4A600A16EA6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		CE5735722F1BD4A600A16EA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE5735742F1BD4A600A16EA6 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		CE5735762F1BD4A600A16EA6 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
+		CE5735782F1BD4A600A16EA6 /* HistoryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViews.swift; sourceTree = "<group>"; };
+		CE5735792F1BD4A600A16EA6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CE57357B2F1BD4A600A16EA6 /* SupplementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementDetailView.swift; sourceTree = "<group>"; };
+		CE57357C2F1BD4A600A16EA6 /* SupplementListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementListView.swift; sourceTree = "<group>"; };
+		CE57357F2F1BD4A600A16EA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE5735802F1BD4A600A16EA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE5735812F1BD4A600A16EA6 /* My_SupplementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_SupplementApp.swift; sourceTree = "<group>"; };
+		CE5735822F1BD4A600A16EA6 /* QuizQuestions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = QuizQuestions.json; sourceTree = "<group>"; };
+		CE5735832F1BD4A600A16EA6 /* SupplementInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SupplementInfo.json; sourceTree = "<group>"; };
+		CE57359F2F1BD4ED00A16EA6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CE5735A22F1BD53100A16EA6 /* AuthRoutesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRoutesFlow.swift; sourceTree = "<group>"; };
+		CE5735A52F1BD55500A16EA6 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		CE5735AC2F1BDADA00A16EA6 /* SettingsRoutesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRoutesFlow.swift; sourceTree = "<group>"; };
+		CE5735AE2F1BDAE900A16EA6 /* RewardsRoutesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsRoutesFlow.swift; sourceTree = "<group>"; };
+		CE5735B02F1BDAF400A16EA6 /* QuizRoutesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRoutesFlow.swift; sourceTree = "<group>"; };
+		CE5735B22F1BDAFF00A16EA6 /* HomeRoutesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoutesFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		CE2868202F1BC5AC00751167 /* My Supplement */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "My Supplement";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CE28681B2F1BC5AC00751167 /* Frameworks */ = {
@@ -32,7 +91,7 @@
 		CE2868152F1BC5AC00751167 = {
 			isa = PBXGroup;
 			children = (
-				CE2868202F1BC5AC00751167 /* My Supplement */,
+				CE5735842F1BD4A600A16EA6 /* My Supplement */,
 				CE28681F2F1BC5AC00751167 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +102,213 @@
 				CE28681E2F1BC5AC00751167 /* My Supplement.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CE5735602F1BD4A600A16EA6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE57355E2F1BD4A600A16EA6 /* MainTabView.swift */,
+				CE57355F2F1BD4A600A16EA6 /* RootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CE5735632F1BD4A600A16EA6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735612F1BD4A600A16EA6 /* DataManager.swift */,
+				CE5735622F1BD4A600A16EA6 /* SwiftDataModels.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE5735672F1BD4A600A16EA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735642F1BD4A600A16EA6 /* Quiz.swift */,
+				CE5735652F1BD4A600A16EA6 /* Supplement.swift */,
+				CE5735662F1BD4A600A16EA6 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE57356A2F1BD4A600A16EA6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735682F1BD4A600A16EA6 /* AuthManager.swift */,
+				CE5735692F1BD4A600A16EA6 /* NotificationManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE57356C2F1BD4A600A16EA6 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				CE57356B2F1BD4A600A16EA6 /* SupplementStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		CE57356E2F1BD4A600A16EA6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735632F1BD4A600A16EA6 /* Data */,
+				CE5735672F1BD4A600A16EA6 /* Models */,
+				CE57356A2F1BD4A600A16EA6 /* Services */,
+				CE57356C2F1BD4A600A16EA6 /* Stores */,
+				CE57356D2F1BD4A600A16EA6 /* Theme.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CE5735712F1BD4A600A16EA6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735A42F1BD54900A16EA6 /* ViewModel */,
+				CE5735A12F1BD51600A16EA6 /* Auth+Routes+Flow */,
+				CE57356F2F1BD4A600A16EA6 /* LoginView.swift */,
+				CE5735702F1BD4A600A16EA6 /* OnboardingView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		CE5735732F1BD4A600A16EA6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735A82F1BD8C800A16EA6 /* Home+Routes+Flow */,
+				CE5735A72F1BD55C00A16EA6 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE5735752F1BD4A600A16EA6 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735A92F1BD8D600A16EA6 /* Quiz+Routes+Flow */,
+				CE5735742F1BD4A600A16EA6 /* QuizView.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		CE5735772F1BD4A600A16EA6 /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735AA2F1BD8E100A16EA6 /* Rewards+Routes+Flow */,
+				CE5735762F1BD4A600A16EA6 /* RewardsView.swift */,
+			);
+			path = Rewards;
+			sourceTree = "<group>";
+		};
+		CE57357A2F1BD4A600A16EA6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735AB2F1BD8FC00A16EA6 /* Settings+Routes+Flow */,
+				CE5735782F1BD4A600A16EA6 /* HistoryViews.swift */,
+				CE5735792F1BD4A600A16EA6 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CE57357D2F1BD4A600A16EA6 /* Supplements */ = {
+			isa = PBXGroup;
+			children = (
+				CE57357B2F1BD4A600A16EA6 /* SupplementDetailView.swift */,
+				CE57357C2F1BD4A600A16EA6 /* SupplementListView.swift */,
+			);
+			path = Supplements;
+			sourceTree = "<group>";
+		};
+		CE57357E2F1BD4A600A16EA6 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735712F1BD4A600A16EA6 /* Auth */,
+				CE5735732F1BD4A600A16EA6 /* Home */,
+				CE5735752F1BD4A600A16EA6 /* Quiz */,
+				CE5735772F1BD4A600A16EA6 /* Rewards */,
+				CE57357A2F1BD4A600A16EA6 /* Settings */,
+				CE57357D2F1BD4A600A16EA6 /* Supplements */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		CE5735842F1BD4A600A16EA6 /* My Supplement */ = {
+			isa = PBXGroup;
+			children = (
+				CE57359E2F1BD4AA00A16EA6 /* Router */,
+				CE5735602F1BD4A600A16EA6 /* App */,
+				CE57356E2F1BD4A600A16EA6 /* Core */,
+				CE57357E2F1BD4A600A16EA6 /* Features */,
+				CE57357F2F1BD4A600A16EA6 /* Assets.xcassets */,
+				CE5735802F1BD4A600A16EA6 /* ContentView.swift */,
+				CE5735812F1BD4A600A16EA6 /* My_SupplementApp.swift */,
+				CE5735822F1BD4A600A16EA6 /* QuizQuestions.json */,
+				CE5735832F1BD4A600A16EA6 /* SupplementInfo.json */,
+			);
+			path = "My Supplement";
+			sourceTree = "<group>";
+		};
+		CE57359E2F1BD4AA00A16EA6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE57359F2F1BD4ED00A16EA6 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CE5735A12F1BD51600A16EA6 /* Auth+Routes+Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735A22F1BD53100A16EA6 /* AuthRoutesFlow.swift */,
+			);
+			path = "Auth+Routes+Flow";
+			sourceTree = "<group>";
+		};
+		CE5735A42F1BD54900A16EA6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735A52F1BD55500A16EA6 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE5735A72F1BD55C00A16EA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735722F1BD4A600A16EA6 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE5735A82F1BD8C800A16EA6 /* Home+Routes+Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735B22F1BDAFF00A16EA6 /* HomeRoutesFlow.swift */,
+			);
+			path = "Home+Routes+Flow";
+			sourceTree = "<group>";
+		};
+		CE5735A92F1BD8D600A16EA6 /* Quiz+Routes+Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735B02F1BDAF400A16EA6 /* QuizRoutesFlow.swift */,
+			);
+			path = "Quiz+Routes+Flow";
+			sourceTree = "<group>";
+		};
+		CE5735AA2F1BD8E100A16EA6 /* Rewards+Routes+Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735AE2F1BDAE900A16EA6 /* RewardsRoutesFlow.swift */,
+			);
+			path = "Rewards+Routes+Flow";
+			sourceTree = "<group>";
+		};
+		CE5735AB2F1BD8FC00A16EA6 /* Settings+Routes+Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE5735AC2F1BDADA00A16EA6 /* SettingsRoutesFlow.swift */,
+			);
+			path = "Settings+Routes+Flow";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +325,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				CE2868202F1BC5AC00751167 /* My Supplement */,
 			);
 			name = "My Supplement";
 			packageProductDependencies = (
@@ -109,6 +372,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE57359B2F1BD4A600A16EA6 /* Assets.xcassets in Resources */,
+				CE57359C2F1BD4A600A16EA6 /* QuizQuestions.json in Resources */,
+				CE57359D2F1BD4A600A16EA6 /* SupplementInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +385,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5735852F1BD4A600A16EA6 /* MainTabView.swift in Sources */,
+				CE5735862F1BD4A600A16EA6 /* RootView.swift in Sources */,
+				CE5735872F1BD4A600A16EA6 /* DataManager.swift in Sources */,
+				CE5735882F1BD4A600A16EA6 /* SwiftDataModels.swift in Sources */,
+				CE5735892F1BD4A600A16EA6 /* Quiz.swift in Sources */,
+				CE57358A2F1BD4A600A16EA6 /* Supplement.swift in Sources */,
+				CE57358B2F1BD4A600A16EA6 /* User.swift in Sources */,
+				CE57358C2F1BD4A600A16EA6 /* AuthManager.swift in Sources */,
+				CE57358D2F1BD4A600A16EA6 /* NotificationManager.swift in Sources */,
+				CE57358E2F1BD4A600A16EA6 /* SupplementStore.swift in Sources */,
+				CE57358F2F1BD4A600A16EA6 /* Theme.swift in Sources */,
+				CE5735A32F1BD53100A16EA6 /* AuthRoutesFlow.swift in Sources */,
+				CE5735902F1BD4A600A16EA6 /* LoginView.swift in Sources */,
+				CE5735912F1BD4A600A16EA6 /* OnboardingView.swift in Sources */,
+				CE5735922F1BD4A600A16EA6 /* HomeView.swift in Sources */,
+				CE5735932F1BD4A600A16EA6 /* QuizView.swift in Sources */,
+				CE5735942F1BD4A600A16EA6 /* RewardsView.swift in Sources */,
+				CE5735A02F1BD4ED00A16EA6 /* Router.swift in Sources */,
+				CE5735B12F1BDAF400A16EA6 /* QuizRoutesFlow.swift in Sources */,
+				CE5735952F1BD4A600A16EA6 /* HistoryViews.swift in Sources */,
+				CE5735962F1BD4A600A16EA6 /* SettingsView.swift in Sources */,
+				CE5735AD2F1BDADA00A16EA6 /* SettingsRoutesFlow.swift in Sources */,
+				CE5735A62F1BD55500A16EA6 /* AuthViewModel.swift in Sources */,
+				CE5735972F1BD4A600A16EA6 /* SupplementDetailView.swift in Sources */,
+				CE5735AF2F1BDAE900A16EA6 /* RewardsRoutesFlow.swift in Sources */,
+				CE5735982F1BD4A600A16EA6 /* SupplementListView.swift in Sources */,
+				CE5735992F1BD4A600A16EA6 /* ContentView.swift in Sources */,
+				CE57359A2F1BD4A600A16EA6 /* My_SupplementApp.swift in Sources */,
+				CE5735B32F1BDAFF00A16EA6 /* HomeRoutesFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

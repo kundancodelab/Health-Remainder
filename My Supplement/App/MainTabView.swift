@@ -2,7 +2,7 @@
 //  MainTabView.swift
 //  My Supplement
 //
-//  Main tab navigation with 5 tabs
+//  Main tab navigation with routers for each feature
 //
 
 import SwiftUI
@@ -50,6 +50,7 @@ struct MainTabView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
+            // Home Tab
             NavigationStack {
                 HomeView()
             }
@@ -58,6 +59,7 @@ struct MainTabView: View {
             }
             .tag(Tab.home)
             
+            // Supplements Tab
             NavigationStack {
                 SupplementListView()
             }
@@ -66,6 +68,7 @@ struct MainTabView: View {
             }
             .tag(Tab.supplements)
             
+            // Quiz Tab
             NavigationStack {
                 QuizView()
             }
@@ -74,6 +77,7 @@ struct MainTabView: View {
             }
             .tag(Tab.quiz)
             
+            // Rewards Tab
             NavigationStack {
                 RewardsView()
             }
@@ -82,6 +86,7 @@ struct MainTabView: View {
             }
             .tag(Tab.rewards)
             
+            // Settings Tab
             NavigationStack {
                 SettingsView()
             }
@@ -97,3 +102,5 @@ struct MainTabView: View {
 #Preview {
     MainTabView()
 }
+
+

@@ -12,6 +12,9 @@ struct QuizView: View {
     @State private var state = QuizState()
     @State private var showResult = false
     @State private var shakeAnswer = false
+    @State private var selectedDifficulty: QuizDifficulty? = nil
+    
+    private var dataManager: DataManager { DataManager.shared }
     
     var currentQuestion: QuizQuestion? {
         guard state.currentQuestionIndex < questions.count else { return nil }
@@ -47,15 +50,72 @@ struct QuizView: View {
                     .padding()
                 }
             } else {
-                emptyState
+                // Start screen with difficulty selection
+                startScreen
             }
         }
         .background(Color.appBackground)
         .navigationTitle("Quiz")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            loadQuestions()
+            loadQuestionsFromJSON()
         }
+    }
+    
+    // MARK: - Start Screen
+    private var startScreen: some View {
+        VStack(spacing: 24) {
+            Spacer()
+            
+            Image(systemName: "brain.head.profile")
+                .font(.system(size: 80))
+                .foregroundColor(.appPrimary)
+            
+            Text("Test Your Knowledge")
+                .font(.title.weight(.bold))
+            
+            Text("Answer questions about supplements and earn coins!")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+            
+            VStack(spacing: 12) {
+                Text("Select Difficulty")
+                    .font(.headline)
+                
+                HStack(spacing: 12) {
+                    ForEach(QuizDifficulty.allCases, id: \.self) { difficulty in
+                        Button {
+                            selectedDifficulty = difficulty
+                        } label: {
+                            VStack(spacing: 4) {
+                                Text(difficulty.rawValue)
+                                    .font(.subheadline.weight(.medium))
+                                Text("+\(difficulty.coinsReward) coins")
+                                    .font(.caption2)
+                            }
+                            .foregroundColor(selectedDifficulty == difficulty ? .white : .primary)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                            .background(selectedDifficulty == difficulty ? Color(hex: difficulty.color) : Color.appCardBackground)
+                            .cornerRadius(12)
+                        }
+                    }
+                }
+            }
+            .padding()
+            
+            Button("Start Quiz") {
+                startQuiz()
+            }
+            .buttonStyle(PrimaryButtonStyle(isDisabled: selectedDifficulty == nil))
+            .disabled(selectedDifficulty == nil)
+            .padding(.horizontal)
+            
+            Spacer()
+        }
+        .padding()
     }
     
     // MARK: - Progress Header
@@ -157,61 +217,85 @@ struct QuizView: View {
         }
     }
     
-    // MARK: - Empty State
-    private var emptyState: some View {
-        VStack(spacing: 16) {
-            Image(systemName: "questionmark.circle")
-                .font(.system(size: 60))
-                .foregroundColor(.secondary)
-            Text("No quiz questions available")
-                .font(.headline)
-            Button("Reload") {
-                loadQuestions()
+    // MARK: - Actions
+    private func loadQuestionsFromJSON() {
+        // Load from bundled JSON file
+        if let url = Bundle.main.url(forResource: "QuizQuestions", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let loaded = try decoder.decode([QuizQuestion].self, from: data)
+                print("✅ Loaded \(loaded.count) quiz questions from JSON")
+                // Don't filter yet - wait for difficulty selection
+            } catch {
+                print("❌ Error loading quiz questions: \(error)")
+                loadSampleQuestions()
             }
-            .buttonStyle(PrimaryButtonStyle())
-            .frame(width: 120)
+        } else {
+            print("⚠️ QuizQuestions.json not found, using sample data")
+            loadSampleQuestions()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
-    // MARK: - Actions
-    private func loadQuestions() {
-        // Sample questions
+    private func startQuiz() {
+        guard let difficulty = selectedDifficulty else { return }
+        
+        // Load and filter questions
+        if let url = Bundle.main.url(forResource: "QuizQuestions", withExtension: "json"),
+           let data = try? Data(contentsOf: url),
+           let allQuestions = try? JSONDecoder().decode([QuizQuestion].self, from: data) {
+            
+            // Filter by difficulty and shuffle
+            let filtered = allQuestions.filter { 
+                $0.difficulty.rawValue.lowercased() == difficulty.rawValue.lowercased() 
+            }
+            questions = Array(filtered.shuffled().prefix(5))
+            
+            if questions.isEmpty {
+                // If no questions for this difficulty, use any 5
+                questions = Array(allQuestions.shuffled().prefix(5))
+            }
+        } else {
+            loadSampleQuestions()
+        }
+    }
+    
+    private func loadSampleQuestions() {
         questions = [
             QuizQuestion(
                 question: "Which vitamin is primarily synthesized in the skin through sun exposure?",
                 options: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
                 correctAnswer: "Vitamin D",
                 explanation: "Vitamin D is synthesized when UVB rays from sunlight interact with cholesterol in skin cells.",
-                difficulty: .easy
+                difficulty: selectedDifficulty ?? .easy
             ),
             QuizQuestion(
                 question: "What mineral is best known for supporting immune function and wound healing?",
                 options: ["Calcium", "Zinc", "Iron", "Potassium"],
                 correctAnswer: "Zinc",
                 explanation: "Zinc plays a crucial role in immune cell function and the body's healing processes.",
-                difficulty: .easy
+                difficulty: selectedDifficulty ?? .easy
             ),
             QuizQuestion(
                 question: "Which vitamin enhances the absorption of iron from plant-based foods?",
                 options: ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin K"],
                 correctAnswer: "Vitamin C",
                 explanation: "Vitamin C converts non-heme iron into a form that's easier for the body to absorb.",
-                difficulty: .medium
+                difficulty: selectedDifficulty ?? .medium
             ),
             QuizQuestion(
                 question: "Vitamin K2 helps direct calcium to which part of the body?",
                 options: ["Muscles", "Brain", "Bones", "Liver"],
                 correctAnswer: "Bones",
                 explanation: "Vitamin K2 activates proteins that help deposit calcium in bones and teeth.",
-                difficulty: .medium
+                difficulty: selectedDifficulty ?? .medium
             ),
             QuizQuestion(
                 question: "What can high doses of Vitamin C cause?",
                 options: ["Hair loss", "Digestive upset", "Vision problems", "Muscle weakness"],
                 correctAnswer: "Digestive upset",
                 explanation: "High doses of Vitamin C (>2000mg/day) may cause diarrhea or stomach discomfort.",
-                difficulty: .hard
+                difficulty: selectedDifficulty ?? .hard
             )
         ]
     }
@@ -240,6 +324,14 @@ struct QuizView: View {
             state.selectedAnswer = nil
             state.isAnswerRevealed = false
         } else {
+            // Quiz completed - save results
+            dataManager.saveQuizResult(
+                totalQuestions: state.correctCount + state.incorrectCount,
+                correctCount: state.correctCount,
+                incorrectCount: state.incorrectCount,
+                coinsEarned: state.coinsEarned,
+                difficulty: selectedDifficulty?.rawValue
+            )
             state.isCompleted = true
         }
     }
@@ -254,7 +346,8 @@ struct QuizView: View {
     
     private func resetQuiz() {
         state.reset()
-        loadQuestions()
+        selectedDifficulty = nil
+        questions = []
     }
 }
 

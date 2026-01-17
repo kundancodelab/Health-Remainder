@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct RewardsView: View {
-    @State private var totalCoins: Int = 150
-    @State private var earnedToday: Int = 25
-    @State private var streak: Int = 7
-    @State private var achievements: [Achievement] = Achievement.samples
+    @State private var totalCoins: Int = 0
+    @State private var earnedToday: Int = 0
+    @State private var streak: Int = 0
+    @State private var supplementsTaken: Int = 0
+    @State private var quizzesCompleted: Int = 0
+    @State private var achievements: [Achievement] = []
+    @State private var recentActivity: [RewardTransaction] = []
+    
+    private var dataManager: DataManager { DataManager.shared }
     
     var body: some View {
         ScrollView {
@@ -32,6 +37,29 @@ struct RewardsView: View {
         }
         .background(Color.appBackground)
         .navigationTitle("Rewards")
+        .onAppear {
+            loadData()
+        }
+    }
+    
+    private func loadData() {
+        let summary = dataManager.getOrCreateRewardsSummary()
+        totalCoins = summary.availableCoins
+        streak = summary.currentStreak
+        supplementsTaken = summary.supplementsTaken
+        quizzesCompleted = summary.quizzesCompleted
+        earnedToday = dataManager.getEarnedToday()
+        recentActivity = dataManager.getRewardTransactions(limit: 10)
+        
+        // Build achievements from summary
+        achievements = [
+            Achievement(name: "First Step", icon: "figure.walk", color: "4CAF50", isUnlocked: summary.hasFirstStepAchievement),
+            Achievement(name: "Week Warrior", icon: "flame.fill", color: "FF9800", isUnlocked: summary.hasWeekWarriorAchievement),
+            Achievement(name: "Quiz Master", icon: "brain.head.profile", color: "9C27B0", isUnlocked: summary.hasQuizMasterAchievement),
+            Achievement(name: "Supplement Pro", icon: "pills.fill", color: "2196F3", isUnlocked: summary.hasSupplementProAchievement),
+            Achievement(name: "30 Day Streak", icon: "calendar", color: "F44336", isUnlocked: summary.has30DayStreakAchievement),
+            Achievement(name: "Health Guru", icon: "heart.fill", color: "E91E63", isUnlocked: summary.hasHealthGuruAchievement),
+        ]
     }
     
     // MARK: - Coins Card
@@ -84,13 +112,13 @@ struct RewardsView: View {
         HStack(spacing: 12) {
             RewardStatCard(
                 title: "Supplements Taken",
-                value: "42",
+                value: "\(supplementsTaken)",
                 icon: "pills.fill",
                 color: .green
             )
             RewardStatCard(
                 title: "Quizzes Completed",
-                value: "8",
+                value: "\(quizzesCompleted)",
                 icon: "checkmark.circle.fill",
                 color: .purple
             )
@@ -124,28 +152,51 @@ struct RewardsView: View {
             Text("Recent Activity")
                 .font(.headline)
             
-            VStack(spacing: 8) {
-                RewardHistoryRow(
-                    icon: "pills.fill",
-                    title: "Took Vitamin C",
-                    coins: 5,
-                    time: "2 hours ago"
-                )
-                RewardHistoryRow(
-                    icon: "questionmark.circle.fill",
-                    title: "Quiz: 4/5 correct",
-                    coins: 40,
-                    time: "Yesterday"
-                )
-                RewardHistoryRow(
-                    icon: "flame.fill",
-                    title: "7-day streak bonus!",
-                    coins: 50,
-                    time: "Yesterday"
-                )
+            if recentActivity.isEmpty {
+                Text("No activity yet. Take supplements and complete quizzes to earn coins!")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .padding(.vertical, 8)
+            } else {
+                VStack(spacing: 8) {
+                    ForEach(recentActivity.prefix(5)) { transaction in
+                        RewardHistoryRow(
+                            icon: iconForType(transaction.type),
+                            title: transaction.title,
+                            coins: transaction.coins,
+                            time: timeAgo(from: transaction.timestamp)
+                        )
+                    }
+                }
             }
         }
         .cardStyle()
+    }
+    
+    private func iconForType(_ type: String) -> String {
+        switch type {
+        case "supplement_taken": return "pills.fill"
+        case "quiz_completed": return "questionmark.circle.fill"
+        case "streak_bonus": return "flame.fill"
+        case "achievement": return "star.fill"
+        default: return "star.circle.fill"
+        }
+    }
+    
+    private func timeAgo(from date: Date) -> String {
+        let calendar = Calendar.current
+        let now = Date()
+        let components = calendar.dateComponents([.day, .hour, .minute], from: date, to: now)
+        
+        if let days = components.day, days > 0 {
+            return days == 1 ? "Yesterday" : "\(days) days ago"
+        } else if let hours = components.hour, hours > 0 {
+            return "\(hours) hour\(hours == 1 ? "" : "s") ago"
+        } else if let minutes = components.minute, minutes > 0 {
+            return "\(minutes) min\(minutes == 1 ? "" : "s") ago"
+        } else {
+            return "Just now"
+        }
     }
 }
 
